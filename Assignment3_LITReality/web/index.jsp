@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-        <jsp:include page="/HomePage.java.jsp" />
+      
 	<!-- banner -->
 	<div class="banner-main">
 		<div class="banner">
@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-							<a href="index.jsp.html"><img src="images/site/lit_logo.jpg" alt=""/></a>
+							<a href="index.jsp"><img src="images/site/lit_logo.jpg" alt=""/></a>
                                                         
 						</div>
 						<!--navbar-header-->
@@ -275,7 +275,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
                                    
 					<div class="col-md-10 resp-tabs-container">
-                                             <c:forEach items="${agentList}" var="agent">
+                                             <c:forEach items="${agentsList}" var="agent">
 						<div class="tab1">
 							<div class="col-md-6 team-Info-agileits">
 								<h4>{$agent.name}</h4>
