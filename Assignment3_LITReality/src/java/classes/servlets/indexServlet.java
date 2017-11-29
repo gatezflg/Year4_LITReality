@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +46,7 @@ public class indexServlet extends HttpServlet {
                     address = "/Error.jsp";
                 } else {
 
-                    address = "/index.jsp";
+                    address = "index.jsp";
                     request.setAttribute("agentsList", list);
                 }
 
@@ -55,7 +56,7 @@ public class indexServlet extends HttpServlet {
             }//end catch
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-            dispatcher.forward(request, response);
+            dispatcher.include(request, response);
         
     }
 

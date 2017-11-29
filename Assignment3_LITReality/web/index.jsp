@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -35,9 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 	<!-- //css files -->
 </head>
-
 <body>
-      
 	<!-- banner -->
 	<div class="banner-main">
 		<div class="banner">
@@ -278,8 +278,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                              <c:forEach items="${agentsList}" var="agent">
 						<div class="tab1">
 							<div class="col-md-6 team-Info-agileits">
-								<h4>{$agent.name}</h4>
-								<span>Email: {$agent.email}</span>
+								<h4>${agent.name}</h4>
+								<span>Email: ${agent.email}</span>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
 									aliqua. Ut enim ad minim veniam, quis.Lorem ipsum dolor .</p>
 								<div class="social-bnr-agileits footer-icons-agileinfo">
