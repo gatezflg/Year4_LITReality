@@ -260,23 +260,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3 class="w3l-titles">Our Agents</h3>
 				<div id="horizontalTab">
 					<ul class="col-md-2 resp-tabs-list">
+                                              <c:forEach items="${agentsList}" var="agent">
 						<li>
-							<img src="images/tab1.jpg" alt=" " class="img-responsive" />
+                                                        <img src="images/agents/${agent.image}.jpg" alt=" " class="img-responsive"/>
 						</li>
-						<li>
-							<img src="images/tab4.jpg" alt=" " class="img-responsive" />
-						</li>
-						<li>
-							<img src="images/tab3.jpg" alt=" " class="img-responsive" />
-						</li>
-						<li>
-							<img src="images/tab2.jpg" alt=" " class="img-responsive" />
-						</li>
+                                              </c:forEach>
 					</ul>
                                    
 					<div class="col-md-10 resp-tabs-container">
                                              <c:forEach items="${agentsList}" var="agent">
-						<div class="tab1">
+						<div class="tab${agent.agentId}">
 							<div class="col-md-6 team-Info-agileits">
 								<h4>${agent.name}</h4>
 								<span>Email: ${agent.email}</span>
