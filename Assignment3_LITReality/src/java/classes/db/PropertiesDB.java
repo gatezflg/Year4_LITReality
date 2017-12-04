@@ -5,7 +5,7 @@
  */
 package classes.db;
 
-import classes.entities.Agents;
+import classes.entities.Properties;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -14,34 +14,35 @@ import javax.persistence.TypedQuery;
  *
  * @author gatez1511
  */
-public class AgentsDB {
+public class PropertiesDB {
     
-     public static List<Agents> getAllAgents() {
     
-        List<Agents> allAgentsList = null;
+     public static List<Properties> getAllProperties() {
+    
+        List<Properties> allPropertyList = null;
         EntityManager em = DBUtil.getEmf().createEntityManager();
        
         try{
         //create tq and use named query from accounts class
-        TypedQuery<Agents> tq = em.createNamedQuery("Agents.findAll", Agents.class);
-         allAgentsList = tq.getResultList();
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findAll", Properties.class);
+         allPropertyList = tq.getResultList();
         
         em.close();
        }catch(Exception ex){
            System.out.println(ex.getMessage());
             em.close();
        }
-       return allAgentsList;
+       return allPropertyList;
     }//end getAllAgents
 
-    public static Agents getAgentsByID(int id) {
+    public static Properties getPropertyByID(int id) {
         
-        Agents a = null;
+        Properties a = null;
         EntityManager em = DBUtil.getEmf().createEntityManager();
         int cont =0;
         try{
             
-        a = em.find(Agents.class, id);
+        a = em.find(Properties.class, id);
 
         em.close();
         }catch(Exception ex){
@@ -52,12 +53,12 @@ public class AgentsDB {
 
     }//end getAccountByID
 
-    public static void deleteAccountByID(int id) {
+    public static void deletePropertyByID(int id) {
 
         //do deletion based on id
     }
 
-    public static void insertAccount(Agents account) {
+    public static void insertProperty(Properties account) {
 
         //insert account object
     }

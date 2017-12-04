@@ -7,9 +7,17 @@
         <servlet-name>indexServlet</servlet-name>
         <servlet-class>classes.servlets.indexServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>propertiesServlet</servlet-name>
+        <servlet-class>classes.servlets.propertiesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>indexServlet</servlet-name>
         <url-pattern>/indexServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>propertiesServlet</servlet-name>
+        <url-pattern>/propertiesServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

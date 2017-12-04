@@ -50,14 +50,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-							<h1><a href="index.jsp.html"><span>L</span>uxury <span>H</span>omes</a></h1>
+							<a href="index.jsp"><img src="images/site/lit_logo.jpg" alt=""/></a>
+							
 						</div>
 						<!--navbar-header-->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.jsp.html">Home</a></li>
+								<li><a href="index.jsp">Home</a></li>
 								<li><a href="about.html" class="active">About</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="/propertiesServlet">Gallery</a></li>
 								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="icons.html">Web Icons</a></li>

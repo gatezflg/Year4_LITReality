@@ -1,14 +1,18 @@
-<!--
-author: W3layouts
-author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<%-- 
+    Document   : index
+    Created on : 28-Nov-2017, 12:42:08
+    Author     : gatez1511
+--%>
+
 <!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="zxx">
 
 <head>
-	<title>Luxury Homes a Real Estates Category Bootstrap Responsive Web Template | Gallery :: w3layouts</title>
+	<title>Luxury Homes a Real Estates Category Bootstrap Responsive Web Template | Gallery</title>
 	<!-- for-mobile-apps -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,14 +55,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-							<h1><a href="index.jsp.html"><span>L</span>uxury <span>H</span>omes</a></h1>
+							<a href="index.jsp"><img src="images/site/lit_logo.jpg" alt=""/></a>
 						</div>
 						<!--navbar-header-->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.jsp.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="gallery.html" class="active">Gallery</a></li>
+								<li><a href="index.jsp">Home</a></li>
+								<li><a href="about.jsp">About</a></li>
+								<li><a href="/propertiesServlet" class="active">Gallery</a></li>
 								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="icons.html">Web Icons</a></li>
@@ -97,52 +101,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- gallery -->
 	<section class="agileits-gallery" id="gallery">
 		<h3 class="w3l-titles">Our Gallery</h3>
-		<div id="thumbGrid" data-thumbgrid="true" data-effect="scaleIn" data-delay="60" data-timing="800" data-pagination="6" data-galleryeffectnext="scaleIn"
-		    data-galleryeffectprev="scaleOut">
-			<img src="images/g1.jpg" alt="img01" data-highres="images/g1.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-			/>
-			<img src="images/g2.jpg" alt="img02" data-highres="images/g2.jpg" data-caption="Nullam quis risus eget urna mollis ornare vel eu leo."
-			/>
-			<img src="images/g3.jpg" alt="img03" data-highres="images/g3.jpg" data-caption="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-			/>
-			<img src="images/g4.jpg" alt="img04" data-highres="images/g4.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-			/>
-			<img src="images/g5.jpg" alt="img05" data-highres="images/g5.jpg" data-caption="Nullam quis risus eget urna mollis ornare vel eu leo."
-			/>
-			<img src="images/g6.jpg" alt="img06" data-highres="images/g6.jpg" data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-			/>
-			<img src="images/g7.jpg" alt="img07" data-highres="images/g7.jpg" data-caption="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-			/>
-			<img src="images/g1.jpg" alt="img08" data-highres="images/g1.jpg" data-caption="Cras mattis consectetur purus sit amet fermentum."
-			/>
-			<img src="images/g2.jpg" alt="img09" data-highres="images/g2.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-			/>
-			<img src="images/g3.jpg" alt="img10" data-highres="images/g3.jpg" data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-			/>
-			<img src="images/g4.jpg" alt="img11" data-highres="images/g4.jpg" data-caption="Nullam quis risus eget urna mollis ornare vel eu leo."
-			/>
-			<img src="images/g5.jpg" alt="img12" data-highres="images/g5.jpg" data-caption="Cras mattis consectetur purus sit amet fermentum."
-			/>
-			<img src="images/g6.jpg" alt="img13" data-highres="images/g6.jpg" data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-			/>
-			<img src="images/g7.jpg" alt="img14" data-highres="images/g7.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-			/>
-			<img src="images/g1.jpg" alt="img15" data-highres="images/g1.jpg" data-caption="Nullam quis risus eget urna mollis ornare vel eu leo."
-			/>
-			<img src="images/g2.jpg" alt="img16" data-highres="images/g2.jpg" data-caption="Cras mattis consectetur purus sit amet fermentum."
-			/>
-			<img src="images/g3.jpg" alt="img17" data-highres="images/g3.jpg" data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-			/>
-			<img src="images/g4.jpg" alt="img18" data-highres="images/g4.jpg" data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-			/>
-			<img src="images/g5.jpg" alt="img19" data-highres="images/g5.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-			/>
-			<img src="images/g6.jpg" alt="img20" data-highres="images/g6.jpg" data-caption="Cras mattis consectetur purus sit amet fermentum."
-			/>
-			<img src="images/g7.jpg" alt="img21" data-highres="images/g7.jpg" data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-			/>
-			<img src="images/g1.jpg" alt="img22" data-highres="images/g1.jpg" data-caption="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-			/>
+		<div class="gallery_container">
+                    <c:forEach items="${propertiesList}" var="property">
+                            <div class="galleryItem">
+                                    <img src="images/properties/large/${property.photo}/${property.photo}.JPG" alt="${property.id}"/>
+                                    
+                                    <h3>${property.city}</h3>
+                                    <h3><fmt:formatNumber value="${property.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></h3> 
+                            </div>
+                      </c:forEach>    
 		</div>
 	</section>
 	<!-- //gallery -->
@@ -215,7 +182,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<div class="copyright">
 		<div class="container">
-			<p>© 2017 Luxury Homes. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
+			<p>Â© 2017 Luxury Homes. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
 		</div>
 	</div>
 	<!-- //footer -->
