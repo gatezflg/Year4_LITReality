@@ -43,7 +43,7 @@ public class propertiesServlet extends HttpServlet {
                 List<Properties> list = PropertiesDB.getAllProperties();
                
                 if (list.isEmpty()) {
-                    address = "/Error.jsp";
+                    address = "/error.jsp";
                 } else {
 
                     address = "gallery.jsp";
@@ -52,7 +52,7 @@ public class propertiesServlet extends HttpServlet {
 
             }//end try
             catch (Exception ex) {
-                address = "/Error.jsp";
+                address = "/error.jsp";
             }//end catch
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);

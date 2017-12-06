@@ -46,12 +46,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 					<nav class="navbar navbar-default">
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
 							<a href="index.jsp"><img src="images/site/lit_logo.jpg" alt=""/></a>
                                                         
 						</div>
@@ -290,66 +284,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 						</div>
                                             </c:forEach>
-						<div class="tab2">
-							<div class="col-md-6 team-Info-agileits">
-								<h4>Amelies Ince</h4>
-								<span>Agent 2</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua. Ut enim ad minim veniam, quis.Lorem ipsum dolor .</p>
-								<div class="social-bnr-agileits footer-icons-agileinfo">
-									<ul class="social-icons3">
-										<li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>
-										<li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
-										<li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
-										<li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
-
-									</ul>
-								</div>
-							</div>
-							<div class="col-md-6 team-img-w3-agile">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="tab3">
-							<div class="col-md-6 team-Info-agileits">
-								<h4>Adrian Kmit</h4>
-								<span>Agent 3</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua. Ut enim ad minim veniam, quis.Lorem ipsum dolor .</p>
-								<div class="social-bnr-agileits footer-icons-agileinfo">
-									<ul class="social-icons3">
-										<li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>
-										<li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
-										<li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
-										<li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
-
-									</ul>
-								</div>
-							</div>
-							<div class="col-md-6 team-img-w3-agile">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="tab4">
-							<div class="col-md-6 team-Info-agileits">
-								<h4>Charles Jkin</h4>
-								<span>Agent 4</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua. Ut enim ad minim veniam, quis.Lorem ipsum dolor .</p>
-								<div class="social-bnr-agileits footer-icons-agileinfo">
-									<ul class="social-icons3">
-										<li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>
-										<li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
-										<li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
-										<li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
-
-									</ul>
-								</div>
-							</div>
-							<div class="col-md-6 team-img-w3-agile">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
+						
 					</div>
 					<div class="clearfix"> </div>
 				</div>

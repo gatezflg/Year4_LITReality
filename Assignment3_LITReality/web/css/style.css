@@ -590,7 +590,7 @@ div.desc {
 .ab-right h3 {
     font-size: 3em;
     letter-spacing: 1px;
-    color: #22cdf3;
+    color: #ffffff;
 }
 .ab-right p {
     font-size: 1.2em;
@@ -1091,7 +1091,7 @@ ul.w3_short {
 }
 /*-- gallery --*/
 .agileits-gallery {
-    background: #22cdf3;
+    background: #ffffff;
 }
 .agileits-gallery h3.w3l-titles:before, .contact h3.w3l-titles:before{
     left: 38%;

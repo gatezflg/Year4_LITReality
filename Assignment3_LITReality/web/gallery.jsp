@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<!-- banner -->
 	<div class="banner-main">
-		<div class="banner-2">
+            <div class="banner-2" style="padding-bottom: 300px;">
 			<!--header-->
 			<div class="header">
 				<div class="container">
@@ -88,13 +88,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<!--//header-->
 		</div>
+            		<div class="w3ls_banner_info_grids">
+			<div class="container">
+				<div class="col-xs-3 w3ls_banner_info_grid">
+					<div class="w3l_banner_info_grid">
+						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
+							<i class="hi-icon hi-icon-archive fa fa-home"> </i>
+						</div>
+						<h4>Home Inspections</h4>
+					</div>
+				</div>
+				<div class="col-xs-3 w3ls_banner_info_grid">
+					<div class="w3l_banner_info_grid">
+						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
+							<i class="hi-icon hi-icon-archive fa fa-bullhorn"> </i>
+						</div>
+						<h4>Property Insurance</h4>
+					</div>
+				</div>
+				<div class="col-xs-3 w3ls_banner_info_grid">
+					<div class="w3l_banner_info_grid">
+						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
+							<i class="hi-icon hi-icon-archive fa fa-map-marker"> </i>
+						</div>
+						<h4>Best Locations</h4>
+					</div>
+				</div>
+				<div class="col-xs-3 w3ls_banner_info_grid">
+					<div class="w3l_banner_info_grid">
+						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
+							<i class="hi-icon hi-icon-archive fa fa-clone"> </i>
+						</div>
+						<h4>Lots & Land</h4>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
 	</div>
 	<div class="services-breadcrumb">
 		<div class="agile_inner_breadcrumb">
-			<ul class="w3_short">
-				<li><a href="index.jsp.html">Home</a><i>>></i></li>
-				<li>Gallery</li>
-			</ul>
+			
 		</div>
 	</div>
 	<!-- //banner -->
@@ -104,10 +138,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="gallery_container">
                     <c:forEach items="${propertiesList}" var="property">
                             <div class="galleryItem">
-                                    <img src="images/properties/large/${property.photo}/${property.photo}.JPG" alt="${property.id}"/>
-                                    
-                                    <h3>${property.city}</h3>
-                                    <h3><fmt:formatNumber value="${property.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></h3> 
+                                <a><img src="images/properties/large/${property.photo}/${property.photo}.JPG" alt="${property.id}" height="200" width="200"/></a>
+                                <h3>${property.city}</h3>
+                                <h3><fmt:formatNumber value="${property.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></h3> 
                             </div>
                       </c:forEach>    
 		</div>

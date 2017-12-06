@@ -43,7 +43,7 @@ public class indexServlet extends HttpServlet {
                 List<Agents> list = AgentsDB.getAllAgents();
                
                 if (list.isEmpty()) {
-                    address = "/Error.jsp";
+                    address = "/error.jsp";
                 } else {
 
                     address = "index.jsp";
@@ -52,7 +52,7 @@ public class indexServlet extends HttpServlet {
 
             }//end try
             catch (Exception ex) {
-                address = "/Error.jsp";
+                address = "/error.jsp";
             }//end catch
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);
