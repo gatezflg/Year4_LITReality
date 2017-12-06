@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
  */
 public class DBUtil {
     
-        private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Assignment3_LITRealityPU");
+        private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Assignment3_LITRealtyPU");
 
     /**
      * @return the emf
