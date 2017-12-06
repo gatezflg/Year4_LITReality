@@ -93,33 +93,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-xs-3 w3ls_banner_info_grid">
 					<div class="w3l_banner_info_grid">
 						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
-							<i class="hi-icon hi-icon-archive fa fa-home"> </i>
+                                                    <a href="propertiesServlet"><i class="hi-icon hi-icon-archive fa fa-home"></i></a>
 						</div>
-						<h4>Home Inspections</h4>
+						<h4>All Properties</h4>
 					</div>
 				</div>
 				<div class="col-xs-3 w3ls_banner_info_grid">
 					<div class="w3l_banner_info_grid">
 						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
-							<i class="hi-icon hi-icon-archive fa fa-bullhorn"> </i>
+                                                    <a href="<c:url value = "/propertiesServlet?resSingle"/>"><i class="hi-icon hi-icon-archive fa fa-ellipsis-h"></i></a>
 						</div>
-						<h4>Property Insurance</h4>
+						<h4>Residential->Single</h4>
 					</div>
 				</div>
 				<div class="col-xs-3 w3ls_banner_info_grid">
 					<div class="w3l_banner_info_grid">
 						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
-							<i class="hi-icon hi-icon-archive fa fa-map-marker"> </i>
+                                                    <a href="<c:url value = "/propertiesServlet?resMulti"/>"><i class="hi-icon hi-icon-archive fa fa-ellipsis-v"> </i></a>
 						</div>
-						<h4>Best Locations</h4>
+						<h4>Residential-Multi</h4>
 					</div>
 				</div>
 				<div class="col-xs-3 w3ls_banner_info_grid">
 					<div class="w3l_banner_info_grid">
 						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
-							<i class="hi-icon hi-icon-archive fa fa-clone"> </i>
+                                                     <a href="<c:url value = "/propertiesServlet?commercial"/>"><i class="hi-icon hi-icon-archive fa fa-suitcase"> </i>
 						</div>
-						<h4>Lots & Land</h4>
+						<h4>Commercial</h4>
 					</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -134,13 +134,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //banner -->
 	<!-- gallery -->
 	<section class="agileits-gallery" id="gallery">
-		<h3 class="w3l-titles">Our Gallery</h3>
+		<h3 class="w3l-titles">Our Gallery - ${propertiesType}</h3>
 		<div class="gallery_container">
                     <c:forEach items="${propertiesList}" var="property">
                             <div class="galleryItem">
-                                <a><img src="images/properties/large/${property.photo}/${property.photo}.JPG" alt="${property.id}" height="200" width="200"/></a>
+                                  <a href="propertiesServlet?singleView=${property.id}">
+                                <img src="images/properties/large/${property.photo}/${property.photo}.JPG" alt="${property.id}" height="200" width="200"/>
                                 <h3>${property.city}</h3>
-                                <h3><fmt:formatNumber value="${property.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></h3> 
+                                <h3><fmt:formatNumber value="${property.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></h3> </a>
                             </div>
                       </c:forEach>    
 		</div>

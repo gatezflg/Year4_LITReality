@@ -17,7 +17,8 @@ import javax.persistence.TypedQuery;
 public class PropertiesDB {
     
     
-     public static List<Properties> getAllProperties() {
+     public static List<Properties> getAllProperties() 
+     {
     
         List<Properties> allPropertyList = null;
         EntityManager em = DBUtil.getEmf().createEntityManager();
@@ -33,8 +34,65 @@ public class PropertiesDB {
             em.close();
        }
        return allPropertyList;
-    }//end getAllAgents
+    }
+     
+    public static List<Properties> getAllResSingle() 
+    {
+    
+        List<Properties> allResSinglePropertyList = null;
+        EntityManager em = DBUtil.getEmf().createEntityManager();
+       
+        try{
+        //create tq and use named query from accounts class
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findAllResSingle", Properties.class);
+         allResSinglePropertyList = tq.getResultList();
+        
+        em.close();
+       }catch(Exception ex){
+           System.out.println(ex.getMessage());
+            em.close();
+       }
+       return allResSinglePropertyList;
+    }
 
+    public static List<Properties> getAllResMulti() 
+    {
+    
+        List<Properties> allResMultiPropertyList = null;
+        EntityManager em = DBUtil.getEmf().createEntityManager();
+       
+        try{
+        //create tq and use named query from accounts class
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findAllResMulti", Properties.class);
+         allResMultiPropertyList = tq.getResultList();
+        
+        em.close();
+       }catch(Exception ex){
+           System.out.println(ex.getMessage());
+            em.close();
+       }
+       return allResMultiPropertyList;
+    }
+    
+        public static List<Properties> getAllCommercial() 
+    {
+    
+        List<Properties> allCommercialPropertyList = null;
+        EntityManager em = DBUtil.getEmf().createEntityManager();
+       
+        try{
+        //create tq and use named query from accounts class
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findAllCommercial", Properties.class);
+         allCommercialPropertyList = tq.getResultList();
+        
+        em.close();
+       }catch(Exception ex){
+           System.out.println(ex.getMessage());
+            em.close();
+       }
+       return allCommercialPropertyList;
+    }
+         
     public static Properties getPropertyByID(int id) {
         
         Properties a = null;
@@ -42,7 +100,7 @@ public class PropertiesDB {
         int cont =0;
         try{
             
-        a = em.find(Properties.class, id);
+        a = em.createNamedQuery("Properties.findById", Properties.class).setParameter("id", id).getSingleResult();
 
         em.close();
         }catch(Exception ex){

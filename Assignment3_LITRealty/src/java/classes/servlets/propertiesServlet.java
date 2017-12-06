@@ -7,6 +7,7 @@ package classes.servlets;
 
 import classes.db.PropertiesDB;
 import classes.entities.Properties;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -37,17 +38,79 @@ public class propertiesServlet extends HttpServlet {
         
         
          String address;
-
+         String type;
             try {
         
-                List<Properties> list = PropertiesDB.getAllProperties();
-               
-                if (list.isEmpty()) {
-                    address = "/error.jsp";
-                } else {
+                if(request.getParameter("singleView") != null)
+                {
+                    Properties property = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("singleView")));
+                    if (property == null) {
+                        address = "/error.jsp";
+                    } else {
+                       
+                        String abso = getServletContext().getRealPath("/images/properties/large/" + property.getPhoto()+"/");
+                        File b = new File(abso);
+                        String[] imageList = b.list();
 
-                    address = "gallery.jsp";
-                    request.setAttribute("propertiesList", list);
+                        address = "singleView.jsp";
+                        request.setAttribute("property", property);
+                      request.setAttribute("imageList", imageList);
+                    }
+                }
+                else if(request.getParameter("resSingle") != null)
+                {
+                    List<Properties> list = PropertiesDB.getAllResSingle();
+                    if (list.isEmpty()) {
+                        address = "/error.jsp";
+                    } else {
+
+                        address = "gallery.jsp";
+                        type = "Residential-Single";
+                        request.setAttribute("propertiesList", list);
+                        request.setAttribute("propertiesType", type);
+                    }
+                }
+                else if(request.getParameter("resMulti") != null)
+                {
+                    List<Properties> list = PropertiesDB.getAllResMulti();
+                    if (list.isEmpty()) {
+                        address = "/error.jsp";
+                    } else {
+
+                        address = "gallery.jsp";
+                        type = "Residential-Multi";
+                        request.setAttribute("propertiesList", list);
+                        request.setAttribute("propertiesType", type);
+                    }
+                
+                }
+                else if(request.getParameter("commercial") != null)
+                {
+                    List<Properties> list = PropertiesDB.getAllCommercial();
+                    if (list.isEmpty()) {
+                        address = "/error.jsp";
+                    } else {
+
+                        address = "gallery.jsp";
+                        type = "Commercial";
+                        request.setAttribute("propertiesList", list);
+                        request.setAttribute("propertiesType", type);
+                    }
+                
+                }
+                else
+                {
+                    List<Properties> list = PropertiesDB.getAllProperties();
+
+                    if (list.isEmpty()) {
+                        address = "/error.jsp";
+                    } else {
+
+                        address = "gallery.jsp";
+                        type = "All Properties";
+                        request.setAttribute("propertiesList", list);
+                        request.setAttribute("propertiesType", type);
+                    }
                 }
 
             }//end try
