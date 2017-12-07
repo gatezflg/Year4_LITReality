@@ -17,47 +17,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="banner-main">
 		<div class="banner-2">
 			<!--header-->
-			<div class="header">
-				<div class="container">
-					<nav class="navbar navbar-default">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-							<h1><a href="IndexServlet"><span>L</span>uxury <span>H</span>omes</a></h1>
-						</div>
-						<!--navbar-header-->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav navbar-right">
-								<li><a href="IndexServlet">Home</a></li>
-								<li><a href="about.jsp">About</a></li>
-								<li><a href="PropertiesServlet" class="active">Gallery</a></li>
-								<li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="icons.jsp" class="active">Web Icons</a></li>
-										<li><a href="codes.jsp">Short Codes</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.jsp">Mail Us</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-				<div class="cd-main-header">
-					<ul class="cd-header-buttons">
-						<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-					</ul>
-					<!-- cd-header-buttons -->
-				</div>
-				<div id="cd-search" class="cd-search">
-					<form action="#" method="post">
-						<input name="Search" type="search" placeholder="Click enter after typing...">
-					</form>
-				</div>
-			</div>
+			<%@include file="Files/navBar.jsp" %>
 			<!--//header-->
 		</div>
 	</div>
@@ -1389,76 +1349,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //newsletter -->
 	<!-- footer -->
-	<div class="footer">
-		<div class="container">
-			<div class="w3_footer_grids">
-				<div class="col-md-4 w3_footer_grid-main">
-					<h2><a href="index.jsp.html"><span>L</span>uxury <span>H</span>omes</a></h2>
-					<p>Aliquam lacus tur <a href="https://w3layouts.com/">http://Luxury Homes.com</a> lobortis quis dolor sed, nec convallis
-						velit vestibulum ac dignissim rhoncus neque.</p>
-				</div>
-				<div class="col-md-4 w3_footer_grid-main-2">
-					<div class="midle-w3l">
-						<p>Luxury <span>Homes</span></p>
-					</div>
-				</div>
-				<div class="col-md-4 w3_footer_grid-main">
-					<div class="w3_footer_grid">
-						<div class="col-xs-2 w3l_footer_grid">
-							<i class="fa fa-home" aria-hidden="true"></i>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h4>Address</h4>
-							<p>234 main street, NewYork City,F34 834.</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="w3_footer_grid">
-						<div class="col-xs-2 w3l_footer_grid">
-							<i class="fa fa-phone" aria-hidden="true"></i>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h4>Call Us</h4>
-							<p>+(123) 456 789 344</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="w3_footer_grid">
-						<div class="col-xs-2 w3l_footer_grid">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h4>Mail Us</h4>
-							<p><a href="mailto:info@example.com">info@example.com</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<div class="copyright">
-		<div class="container">
-			<p>© 2017 Luxury Homes. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
-		</div>
-	</div>
+            <%@ include file="Files/footer.jsp" %>
 	<!-- //footer -->
-
-	<!-- js-scripts -->
-	<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<!-- Necessary-JavaScript-File-For-Bootstrap -->
-	<!-- //js -->
-	<!-- smooth scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<!-- //smooth scrolling -->
-	<!--search jQuery-->
-	<script src="js/main.js"></script>
-	<!--//search jQuery-->
-	<!-- js-scripts -->
-
 </body>
 
 </html>
