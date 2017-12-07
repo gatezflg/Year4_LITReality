@@ -4,38 +4,13 @@
     Author     : gatez1511
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html>
 <head>
-	<title>Luxury Homes a Real Estates Category Bootstrap Responsive Web Template | Home</title>
-	<!-- for-mobile-apps -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Luxury Homes Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-	<script type="application/x-javascript">
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!-- //for-mobile-apps -->
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
-	<!-- css files -->
-	<link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext"
-	    rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-	<!-- //css files -->
+    <title>LIT-Realty | Home</title>
+    <%@include file="Files/meta.jsp" %>
+    <%@ include file="Files/header.jsp" %> 
 </head>
 <body>
 	<!-- banner -->
@@ -46,13 +21,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 					<nav class="navbar navbar-default">
 						<div class="navbar-header">
-							<a href="index.jsp"><img src="images/site/lit_logo.jpg" alt=""/></a>
+							<a href="IndexServlet"><img src="images/site/lit_logo.jpg" alt=""/></a>
                                                         
 						</div>
 						<!--navbar-header-->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.jsp" class="active">Home</a></li>
+								<li><a href="IndexServlet" class="active">Home</a></li>
 								<li><a href="about.jsp">About</a></li>
 								<li><a href="PropertiesServlet">Gallery</a></li>
 								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
@@ -155,8 +130,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="col-md-6 ab-right">
 				<h3>Welcome to Our Real Estate Luxury Homes</h3>
-				<p>Thank you for taking the time to visit our site! In today’s real estate market, renting is becoming a popular option
-					again for a lot of people. We pride ourselves on our service to our clients.We’re sure you will find what you’re looking
+				<p>Thank you for taking the time to visit our site! In today?s real estate market, renting is becoming a popular option
+					again for a lot of people. We pride ourselves on our service to our clients.We?re sure you will find what you?re looking
 					for among hundreds of our real estate listings!</p>
 			</div>
 		</div>
@@ -451,7 +426,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //sponsors -->
 	<div class="copyright">
 		<div class="container">
-			<p>© 2017 Luxury Homes. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
+			<p>� 2017 Luxury Homes. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
 		</div>
 	</div>
 	<!-- //footer -->
