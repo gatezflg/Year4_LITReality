@@ -54,16 +54,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!--navbar-header-->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.jsp.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="index.jsp">Home</a></li>
+								<li><a href="about.jsp">About</a></li>
+								<li><a href="propertiesServlet" class="active">Gallery</a></li>
 								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="icons.html">Web Icons</a></li>
-										<li><a href="codes.html">Short Codes</a></li>
+										<li><a href="icons.jsp">Web Icons</a></li>
+										<li><a href="codes.jsp">Short Codes</a></li>
 									</ul>
 								</li>
-								<li><a href="contact.html" class="active">Mail Us</a></li>
+								<li><a href="contact.jsp" class="active">Mail Us</a></li>
 							</ul>
 						</div>
 					</nav>

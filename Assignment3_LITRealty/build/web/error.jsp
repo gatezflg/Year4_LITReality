@@ -6,10 +6,10 @@
    <head>
         <LINK REL=STYLESHEET HREF="assets/css/w3.css" TYPE="text/css"/>   
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Minithings: Deletion</title>
+        <title>LIT-Realty: ERROR!</title>
     </head>
     <body>
-        <center><img src="assets/images/logo.jpg" width="385" height="164" class="w3-hover-grayscale" alt="Mini Things"/></center>
+        <center><img width="385" height="164"  src="images/site/logo.gif" alt=""/></center>
         <br>
         <br>
         <h1>An error has occured</h1>

@@ -57,11 +57,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a href="propertiesServlet">Gallery</a></li>
 								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="icons.html">Web Icons</a></li>
-										<li><a href="codes.html">Short Codes</a></li>
+										<li><a href="icons.jsp">Web Icons</a></li>
+										<li><a href="codes.jsp">Short Codes</a></li>
 									</ul>
 								</li>
-								<li><a href="contact.html">Mail Us</a></li>
+								<li><a href="contact.jsp">Mail Us</a></li>
 							</ul>
 						</div>
 					</nav>
