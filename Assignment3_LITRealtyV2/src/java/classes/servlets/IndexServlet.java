@@ -6,7 +6,9 @@
 package classes.servlets;
 
 import classes.db.AgentsDB;
+import classes.db.PropertiesDB;
 import classes.entities.Agents;
+import classes.entities.Properties;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -35,18 +37,22 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        
-         String address;
+         String address, page;
 
             try {
         
                 List<Agents> list = AgentsDB.getAllAgents();
-               
-                if (list.isEmpty()) {
+                List<Properties> propList = PropertiesDB.getTop11Properties();
+
+                if (list.isEmpty() || propList.isEmpty()) {
                     address = "/error.jsp";
                 } else {
 
                     address = "index.jsp";
+                    page = "Home";
                     request.setAttribute("agentsList", list);
+                    request.setAttribute("propList", propList);
+                    request.setAttribute("page", page);
                 }
 
             }//end try

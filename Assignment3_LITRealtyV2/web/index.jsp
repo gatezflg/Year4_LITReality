@@ -1,290 +1,290 @@
-<%-- 
-    Document   : index
-    Created on : 28-Nov-2017, 12:42:08
-    Author     : gatez1511
---%>
+<%@ include file="Files/header.jsp" %> 
+
+<div class="">
+    
+
+            <div id="slider" class="sl-slider-wrapper">
+
+        <div class="sl-slider">
+        
+          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+            <div class="sl-slide-inner">
+              <div class="bg-img bg-img-1"></div>
+              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+              <blockquote>              
+              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+              <cite>$ 20,000,000</cite>
+              </blockquote>
+            </div>
+          </div>
+          
+          <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+            <div class="sl-slide-inner">
+              <div class="bg-img bg-img-2"></div>
+              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+              <blockquote>              
+              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+              <cite>$ 20,000,000</cite>
+              </blockquote>
+            </div>
+          </div>
+          
+          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+            <div class="sl-slide-inner">
+              <div class="bg-img bg-img-3"></div>
+              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+              <blockquote>              
+              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+              <cite>$ 20,000,000</cite>
+              </blockquote>
+            </div>
+          </div>
+          
+          <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+            <div class="sl-slide-inner">
+              <div class="bg-img bg-img-4"></div>
+              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+              <blockquote>              
+              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+              <cite>$ 20,000,000</cite>
+              </blockquote>
+            </div>
+          </div>
+          
+          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+            <div class="sl-slide-inner">
+              <div class="bg-img bg-img-5"></div>
+              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+              <blockquote>              
+              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+              <cite>$ 20,000,000</cite>
+              </blockquote>
+            </div>
+          </div>
+        </div><!-- /sl-slider -->
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>LIT-Realty | Home</title>
-    <%@include file="Files/meta.jsp" %>
-    <%@ include file="Files/header.jsp" %> 
-</head>
-<body>
-	<!-- banner -->
-	<div class="banner-main">
-		<div class="banner">
-			<!--header-->
-                        <%@include file="Files/navBar.jsp" %>
-			<!--//header-->
-			<div class="w3_banner_info">
-				<div class="w3_banner_info_grid">
-					<h3 class="test"><span class="char1" style="opacity: 1;">A</span><span class="char2" style="opacity: 1;">t</span><span class="char3" style="opacity: 1;">t</span><span class="char4" style="opacity: 1;">r</span><span class="char5" style="opacity: 1;">a</span><span class="char6" style="opacity: 1;">c</span><span class="char7" style="opacity: 1;">t</span><span class="char8" style="opacity: 1;">i</span><span class="char9" style="opacity: 1;">v</span><span class="char10" style="opacity: 1;">e</span><span class="char11" style="opacity: 1;"> </span><span class="char12" style="opacity: 1;">h</span><span class="char13" style="opacity: 1;">o</span><span class="char14" style="opacity: 1;">m</span><span class="char15" style="opacity: 1;">e</span><span class="char16" style="opacity: 1;"> </span><span class="char17" style="opacity: 1;">p</span><span class="char18" style="opacity: 1;">u</span><span class="char19" style="opacity: 1;">r</span><span class="char20" style="opacity: 1;">c</span><span class="char21" style="opacity: 1;">h</span><span class="char22" style="opacity: 1;">a</span><span class="char23" style="opacity: 1;">s</span><span class="char24" style="opacity: 1;">e</span><span class="char25" style="opacity: 1;"> </span><span class="char26" style="opacity: 1;">o</span><span class="char27" style="opacity: 1;">f</span><span class="char28" style="opacity: 1;">f</span><span class="char29" style="opacity: 1;">e</span><span class="char30" style="opacity: 1;">r</span><span class="char31" style="opacity: 1;">s</span></h3>
 
-					<p>We deal with different kinds of properties <span>Start browsing now!</span></p>
+        <nav id="nav-dots" class="nav-dots">
+          <span class="nav-dot-current"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </nav>
 
-				</div>
-				<div class="wthree_banner_grids">
-					<div class="col-xs-3 wthree_banner_grid">
-						<i class="fa fa-key" aria-hidden="true"></i>
-						<h4>Rentals</h4>
-					</div>
-					<div class="col-xs-3 wthree_banner_grid">
-						<i class="fa fa-clock-o" aria-hidden="true"></i>
-						<h4>Mortgage</h4>
-					</div>
-					<div class="col-xs-3 wthree_banner_grid">
-						<i class="fa fa-building-o" aria-hidden="true"></i>
-						<h4>Office spaces</h4>
-					</div>
-					<div class="col-xs-3 wthree_banner_grid">
-						<i class="fa fa-money" aria-hidden="true"></i>
-						<h4>Loans</h4>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-		<div class="w3ls_banner_info_grids">
-			<div class="container">
-				<div class="col-xs-3 w3ls_banner_info_grid">
-					<div class="w3l_banner_info_grid">
-						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
-							<i class="hi-icon hi-icon-archive fa fa-home"> </i>
-						</div>
-						<h4>Home Inspections</h4>
-					</div>
-				</div>
-				<div class="col-xs-3 w3ls_banner_info_grid">
-					<div class="w3l_banner_info_grid">
-						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
-							<i class="hi-icon hi-icon-archive fa fa-bullhorn"> </i>
-						</div>
-						<h4>Property Insurance</h4>
-					</div>
-				</div>
-				<div class="col-xs-3 w3ls_banner_info_grid">
-					<div class="w3l_banner_info_grid">
-						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
-							<i class="hi-icon hi-icon-archive fa fa-map-marker"> </i>
-						</div>
-						<h4>Best Locations</h4>
-					</div>
-				</div>
-				<div class="col-xs-3 w3ls_banner_info_grid">
-					<div class="w3l_banner_info_grid">
-						<div class="w3_banner_info_grid hi-icon-effect-4 hi-icon-effect-4b">
-							<i class="hi-icon hi-icon-archive fa fa-clone"> </i>
-						</div>
-						<h4>Lots & Land</h4>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //banner -->
-	<!-- about -->
-	<div class="about-w3l">
-		<div class="container">
-			<h3 class="w3l-titles">About Us</h3>
-			<div class="col-md-6 ab-left">
-				<img src="images/ab.png" alt=" " />
-			</div>
-			<div class="col-md-6 ab-right">
-				<h3>Welcome to Our Real Estate Luxury Homes</h3>
-				<p>Thank you for taking the time to visit our site! In today?s real estate market, renting is becoming a popular option
-					again for a lot of people. We pride ourselves on our service to our clients.We?re sure you will find what you?re looking
-					for among hundreds of our real estate listings!</p>
-			</div>
-		</div>
-	</div>
-	<!-- //about -->
-	<!-- advantages -->
-	<div class="two-grids">
-		<div class="container">
-			<h3 class="w3l-titles">Advantages</h3>
-			<p class="w3layouts_dummy_para">Custom Designed with the Latest Technologies</p>
-			<div class="col-md-6 w3_two_grid_right">
-				<div class="w3_two_grid_right1">
-					<div class="col-xs-3 w3_two_grid_right_grid">
-						<div class="w3_two_grid_right_grid1">
-							<i class="fa fa-hourglass-o" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="col-xs-9 w3_two_grid_right_gridr">
-						<h4>Home Managers</h4>
-						<p>Suspendisse bibendum ex sit amet tellus finibus ultrices.</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="w3_two_grid_right1">
-					<div class="col-xs-3 w3_two_grid_right_grid">
-						<div class="w3_two_grid_right_grid1">
-							<i class="fa fa-clone" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="col-xs-9 w3_two_grid_right_gridr">
-						<h4>Special Deals</h4>
-						<p>Suspendisse bibendum ex sit amet tellus finibus ultrices.</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="w3_two_grid_right1">
-					<div class="col-xs-3 w3_two_grid_right_grid">
-						<div class="w3_two_grid_right_grid1">
-							<i class="fa fa-external-link" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="col-xs-9 w3_two_grid_right_gridr">
-						<h4>Residential</h4>
-						<p>Suspendisse bibendum ex sit amet tellus finibus ultrices.</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-6 w3_two_grid_right">
-				<div class="w3_two_grid_right1">
-					<div class="col-xs-3 w3_two_grid_right_grid">
-						<div class="w3_two_grid_right_grid1">
-							<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="col-xs-9 w3_two_grid_right_gridr">
-						<h4>Ideal Layout</h4>
-						<p>Suspendisse bibendum ex sit amet tellus finibus ultrices.</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="w3_two_grid_right1">
-					<div class="col-xs-3 w3_two_grid_right_grid">
-						<div class="w3_two_grid_right_grid1">
-							<i class="fa fa-check-square-o" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="col-xs-9 w3_two_grid_right_gridr">
-						<h4>Custom Designed</h4>
-						<p>Suspendisse bibendum ex sit amet tellus finibus ultrices.</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="w3_two_grid_right1">
-					<div class="col-xs-3 w3_two_grid_right_grid">
-						<div class="w3_two_grid_right_grid1">
-							<i class="fa fa-square-o" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="col-xs-9 w3_two_grid_right_gridr">
-						<h4>Best House</h4>
-						<p>Suspendisse bibendum ex sit amet tellus finibus ultrices.</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-	<!-- //advantages -->
-	<!-- team -->
-	<div class="team" id="team">
-		<div class="container">
-			<div class="w3-agileits-team-title">
-				<h3 class="w3l-titles">Our Agents</h3>
-				<div id="horizontalTab">
-					<ul class="col-md-2 resp-tabs-list">
-                                              <c:forEach items="${agentsList}" var="agent">
-						<li>
-                                                        <img src="images/agents/${agent.image}.jpg" alt=" " class="img-responsive"/>
-						</li>
-                                              </c:forEach>
-					</ul>
-                                   
-					<div class="col-md-10 resp-tabs-container">
-                                             <c:forEach items="${agentsList}" var="agent">
-						<div class="tab${agent.agentId}">
-							<div class="col-md-6 team-Info-agileits">
-								<h4>${agent.name}</h4>
-								<span>Email: ${agent.email}</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua. Ut enim ad minim veniam, quis.Lorem ipsum dolor .</p>
-								<div class="social-bnr-agileits footer-icons-agileinfo">
-									<ul class="social-icons3">
-										<li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>
-										<li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
-										<li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
-										<li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+      </div><!-- /slider-wrapper -->
+</div>
 
-									</ul>
-								</div>
-							</div>
-							<div class="col-md-6 team-img-w3-agile">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-                                            </c:forEach>
-						
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //team -->
-	<!-- stats -->
-	<div class="stats">
-		<div class="wthree_stat">
-			<div class="container">
-				<div class="wthree_stat_right">
-					<ul>
-						<li>
-							<div class="wthree_stat_right1">
-								<i class="fa fa-users" aria-hidden="true"></i>
-								<h4>Happy clients</h4>
-								<p class="counter">1200</p>
-							</div>
-						</li>
-						<li>
-							<div class="wthree_stat_right1">
-								<i class="fa fa-trophy" aria-hidden="true"></i>
-								<h4>Awards</h4>
-								<p class="counter">800</p>
-							</div>
-						</li>
-						<li>
-							<div class="wthree_stat_right1">
-								<i class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></i>
-								<h4>Agencies</h4>
-								<p class="counter">500</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //stats -->
-	<!-- newsletter -->
-	<div class="w3layouts_newsletter">
-		<div class="container">
-			<div class="w3layouts_newsletter_left">
-				<h3>Subscribe to our newsletter</h3>
-			</div>
-			<div class="w3layouts_newsletter_right">
-				<form action="#" method="post">
-					<input type="email" name="Email" placeholder="Email..." required="">
-					<input type="submit" value="Subscribe">
-				</form>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-	<!-- //newsletter -->
-	<!-- footer -->
-    <%@ include file="Files/footer.jsp" %>
-	<!-- //footer -->
-</body>
 
-</html>
+
+<div class="banner-search">
+  <div class="container"> 
+    <!-- banner -->
+    <h3>Buy, Sale & Rent</h3>
+    <div class="searchbar">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6">
+          <input type="text" class="form-control" placeholder="Search of Properties">
+          <div class="row">
+            <div class="col-lg-3 col-sm-3 ">
+              <select class="form-control">
+                <option>Buy</option>
+                <option>Rent</option>
+                <option>Sale</option>
+              </select>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <select class="form-control">
+                <option>Price</option>
+                <option>$150,000 - $200,000</option>
+                <option>$200,000 - $250,000</option>
+                <option>$250,000 - $300,000</option>
+                <option>$300,000 - above</option>
+              </select>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+            <select class="form-control">
+                <option>Property</option>
+                <option>Apartment</option>
+                <option>Building</option>
+                <option>Office Space</option>
+              </select>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+              <button class="btn btn-success"  onclick="window.location.href='buysalerent.jsp'">Find Now</button>
+              </div>
+          </div>
+          
+          
+        </div>
+        <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+          <p>Join now and get updated with all the properties deals.</p>
+          <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- banner -->
+<div class="container">
+  <div class="properties-listing spacer"> <a href="buysalerent.jsp" class="pull-right viewall">View All Listing</a>
+    <h2>Featured Properties</h2>
+    <div id="owl-example" class="owl-carousel">
+        <c:forEach items="${propList}" var="property">
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties"/>
+          <div class="status sold">Sold</div>
+        </div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+        </c:forEach>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/2.jpg" class="img-responsive" alt="properties"/>
+          <div class="status new">New</div>
+        </div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties"/></div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/4.jpg" class="img-responsive" alt="properties"/></div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties"/>
+          <div class="status sold">Sold</div>
+        </div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/2.jpg" class="img-responsive" alt="properties"/>
+          <div class="status sold">Sold</div>
+        </div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties"/>
+          <div class="status new">New</div>
+        </div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/4.jpg" class="img-responsive" alt="properties"/></div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties"/></div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/2.jpg" class="img-responsive" alt="properties"/></div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      <div class="properties">
+        <div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties"/></div>
+        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
+        <p class="price">Price: $234,900</p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="spacer">
+    <div class="row">
+      <div class="col-lg-6 col-sm-9 recent-view">
+        <h3>About Us</h3>
+        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.jsp">Learn More</a></p>
+      
+      </div>
+      <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
+        <h3>Recommended Properties</h3>
+        <div id="myCarousel" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+          </ol>
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="row">
+                <div class="col-lg-4"><img src="images/properties/1.jpg" class="img-responsive" alt="properties"/></div>
+                <div class="col-lg-8">
+                  <h5><a href="property_detail.jsp">Integer sed porta quam</a></h5>
+                  <p class="price">$300,000</p>
+                  <a href="property_detail.jsp" class="more">More Detail</a> </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="col-lg-4"><img src="images/properties/2.jpg" class="img-responsive" alt="properties"/></div>
+                <div class="col-lg-8">
+                  <h5><a href="property_detail.jsp">Integer sed porta quam</a></h5>
+                  <p class="price">$300,000</p>
+                  <a href="property_detail.jsp" class="more">More Detail</a> </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="col-lg-4"><img src="images/properties/3.jpg" class="img-responsive" alt="properties"/></div>
+                <div class="col-lg-8">
+                  <h5><a href="property_detail.jsp">Integer sed porta quam</a></h5>
+                  <p class="price">$300,000</p>
+                  <a href="property_detail.jsp" class="more">More Detail</a> </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="col-lg-4"><img src="images/properties/4.jpg" class="img-responsive" alt="properties"/></div>
+                <div class="col-lg-8">
+                  <h5><a href="property_detail.jsp">Integer sed porta quam</a></h5>
+                  <p class="price">$300,000</p>
+                  <a href="property_detail.jsp" class="more">More Detail</a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%@ include file="Files/footer.jsp" %> 

@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Properties.findAll", query = "SELECT p FROM Properties p")
     ,@NamedQuery(name = "Properties.findAllOrdered", query = "SELECT p FROM Properties p ORDER BY p.price DESC")
+    ,@NamedQuery(name = "Properties.findTop11Price", query = "SELECT p FROM Properties p ORDER BY p.price DESC LIMIT 11")
     ,@NamedQuery(name = "Properties.findAllResSingle", query = "SELECT p FROM Properties p WHERE p.typeId =1 ORDER BY p.price DESC")
     ,@NamedQuery(name = "Properties.findAllResMulti", query = "SELECT p FROM Properties p WHERE p.typeId =2 ORDER BY p.price DESC")
     ,@NamedQuery(name = "Properties.findAllCommercial", query = "SELECT p FROM Properties p WHERE p.typeId =3 ORDER BY p.price DESC")
@@ -53,6 +54,19 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Properties.findByDateAdded", query = "SELECT p FROM Properties p WHERE p.dateAdded = :dateAdded")})
 public class Properties implements Serializable {
 
+    @Basic(optional = false)
+    @Column(name = "styleId")
+    private int styleId;
+    @Basic(optional = false)
+    @Column(name = "typeId")
+    private int typeId;
+    @Basic(optional = false)
+    @Column(name = "garageId")
+    private int garageId;
+    @Basic(optional = false)
+    @Column(name = "agentId")
+    private int agentId;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,10 +79,6 @@ public class Properties implements Serializable {
     private String city;
     @Column(name = "listingNum")
     private Integer listingNum;
-    @Column(name = "styleId")
-    private Integer styleId;
-    @Column(name = "typeId")
-    private Integer typeId;
     @Column(name = "bedrooms")
     private Integer bedrooms;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -86,10 +96,6 @@ public class Properties implements Serializable {
     private String lotsize;
     @Column(name = "garagesize")
     private Short garagesize;
-    @Column(name = "garageId")
-    private Integer garageId;
-    @Column(name = "agentId")
-    private Integer agentId;
     @Column(name = "photo")
     private String photo;
     @Column(name = "price")
@@ -144,21 +150,6 @@ public class Properties implements Serializable {
         this.listingNum = listingNum;
     }
 
-    public Integer getStyleId() {
-        return styleId;
-    }
-
-    public void setStyleId(Integer styleId) {
-        this.styleId = styleId;
-    }
-
-    public Integer getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
-    }
 
     public Integer getBedrooms() {
         return bedrooms;
@@ -216,21 +207,6 @@ public class Properties implements Serializable {
         this.garagesize = garagesize;
     }
 
-    public Integer getGarageId() {
-        return garageId;
-    }
-
-    public void setGarageId(Integer garageId) {
-        this.garageId = garageId;
-    }
-
-    public Integer getAgentId() {
-        return agentId;
-    }
-
-    public void setAgentId(Integer agentId) {
-        this.agentId = agentId;
-    }
 
     public String getPhoto() {
         return photo;
@@ -279,6 +255,38 @@ public class Properties implements Serializable {
     @Override
     public String toString() {
         return "classes.entities.Properties[ id=" + id + " ]";
+    }
+
+    public int getStyleId() {
+        return styleId;
+    }
+
+    public void setStyleId(int styleId) {
+        this.styleId = styleId;
+    }
+
+    public int getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
+    }
+
+    public int getGarageId() {
+        return garageId;
+    }
+
+    public void setGarageId(int garageId) {
+        this.garageId = garageId;
+    }
+
+    public int getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(int agentId) {
+        this.agentId = agentId;
     }
     
 }

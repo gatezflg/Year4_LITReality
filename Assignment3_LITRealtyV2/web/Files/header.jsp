@@ -1,31 +1,94 @@
-<%-- 
-    Document   : header
-    Created on : 07-Dec-2017, 12:09:38
-    Author     : gatez1511
---%>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LIT-Realty | ${page}</title>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<script type="application/x-javascript">
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+ 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.js"></script>
+  <script src="assets/script.js"></script>
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!-- //for-mobile-apps -->
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
-	<!-- css files -->
-	<link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext"
-	    rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-	<!-- //css files -->
+
+
+<!-- Owl stylesheet -->
+<link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="assets/owl-carousel/owl.theme.css">
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+<!-- Owl stylesheet -->
+
+
+<!-- slitslider -->
+    <link rel="stylesheet" type="text/css" href="assets/slitslider/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/slitslider/css/custom.css" />
+    <script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
+<!-- slitslider -->
         <link rel="shortcut icon" href="images/site/logo.gif">
 
         <%@page contentType="text/html" pageEncoding="UTF-8"%>
         <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
         <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+</head>
+
+<body>
+
+
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+
+        <div class="navbar-inverse" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+
+
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right">
+               <li class="active"><a href="index.jsp">Home</a></li>
+                <li><a href="about.jsp">About</a></li>
+                <li><a href="agents.jsp">Agents</a></li>         
+                <li><a href="blog.jsp">Blog</a></li>
+                <li><a href="contact.jsp">Contact</a></li>
+              </ul>
+            </div>
+            <!-- #Nav Ends -->
+
+          </div>
+        </div>
+
+    </div>
+<!-- #Header Starts -->
+
+
+
+
+
+<div class="container">
+
+<!-- Header Starts -->
+<div class="header">
+<a href="index.jsp"><img src="images/logo.png" alt="Realestate"></a>
+
+              <ul class="pull-right">
+                <li><a href="buysalerent.jsp">Buy</a></li>
+                <li><a href="buysalerent.jsp">Sale</a></li>         
+                <li><a href="buysalerent.jsp">Rent</a></li>
+              </ul>
+</div>
+<!-- #Header Starts -->
+</div>

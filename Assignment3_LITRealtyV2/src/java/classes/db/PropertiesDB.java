@@ -36,6 +36,25 @@ public class PropertiesDB {
        return allPropertyList;
     }
      
+          public static List<Properties> getTop11Properties() 
+     {
+    
+        List<Properties> topPropertyList = null;
+        EntityManager em = DBUtil.getEmf().createEntityManager();
+       
+        try{
+        //create tq and use named query from accounts class
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findTop11Price", Properties.class);
+         topPropertyList = tq.getResultList();
+        
+        em.close();
+       }catch(Exception ex){
+           System.out.println(ex.getMessage());
+            em.close();
+       }
+       return topPropertyList;
+    }
+     
     public static List<Properties> getAllResSingle() 
     {
     
