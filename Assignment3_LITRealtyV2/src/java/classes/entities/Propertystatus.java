@@ -10,8 +10,6 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -25,46 +23,45 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author gatez1511
  */
 @Entity
-@Table(name = "garagetypes")
+@Table(name = "propertystatus")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Garagetypes.findAll", query = "SELECT g FROM Garagetypes g")
-    , @NamedQuery(name = "Garagetypes.findByGarageId", query = "SELECT g FROM Garagetypes g WHERE g.garageId = :garageId")
-    , @NamedQuery(name = "Garagetypes.findByGType", query = "SELECT g FROM Garagetypes g WHERE g.gType = :gType")})
-public class Garagetypes implements Serializable {
+    @NamedQuery(name = "Propertystatus.findAll", query = "SELECT p FROM Propertystatus p")
+    , @NamedQuery(name = "Propertystatus.findByStatusId", query = "SELECT p FROM Propertystatus p WHERE p.statusId = :statusId")
+    , @NamedQuery(name = "Propertystatus.findByStatus", query = "SELECT p FROM Propertystatus p WHERE p.status = :status")})
+public class Propertystatus implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "garageId")
-    private Integer garageId;
-    @Column(name = "gType")
-    private String gType;
-    @OneToMany(mappedBy = "garageId")
+    @Column(name = "statusId")
+    private Integer statusId;
+    @Column(name = "status")
+    private String status;
+    @OneToMany(mappedBy = "statusId")
     private Collection<Properties> propertiesCollection;
 
-    public Garagetypes() {
+    public Propertystatus() {
     }
 
-    public Garagetypes(Integer garageId) {
-        this.garageId = garageId;
+    public Propertystatus(Integer statusId) {
+        this.statusId = statusId;
     }
 
-    public Integer getGarageId() {
-        return garageId;
+    public Integer getStatusId() {
+        return statusId;
     }
 
-    public void setGarageId(Integer garageId) {
-        this.garageId = garageId;
+    public void setStatusId(Integer statusId) {
+        this.statusId = statusId;
     }
 
-    public String getGType() {
-        return gType;
+    public String getStatus() {
+        return status;
     }
 
-    public void setGType(String gType) {
-        this.gType = gType;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @XmlTransient
@@ -79,18 +76,18 @@ public class Garagetypes implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (garageId != null ? garageId.hashCode() : 0);
+        hash += (statusId != null ? statusId.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Garagetypes)) {
+        if (!(object instanceof Propertystatus)) {
             return false;
         }
-        Garagetypes other = (Garagetypes) object;
-        if ((this.garageId == null && other.garageId != null) || (this.garageId != null && !this.garageId.equals(other.garageId))) {
+        Propertystatus other = (Propertystatus) object;
+        if ((this.statusId == null && other.statusId != null) || (this.statusId != null && !this.statusId.equals(other.statusId))) {
             return false;
         }
         return true;
@@ -98,7 +95,7 @@ public class Garagetypes implements Serializable {
 
     @Override
     public String toString() {
-        return "classes.entities.Garagetypes[ garageId=" + garageId + " ]";
+        return "classes.entities.Propertystatus[ statusId=" + statusId + " ]";
     }
     
 }

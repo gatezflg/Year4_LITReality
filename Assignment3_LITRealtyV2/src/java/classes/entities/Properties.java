@@ -13,7 +13,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -30,42 +32,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Properties.findAll", query = "SELECT p FROM Properties p")
-    ,@NamedQuery(name = "Properties.findAllOrdered", query = "SELECT p FROM Properties p ORDER BY p.price DESC")
-    ,@NamedQuery(name = "Properties.findTop11Price", query = "SELECT p FROM Properties p ORDER BY p.price DESC LIMIT 11")
-    ,@NamedQuery(name = "Properties.findAllResSingle", query = "SELECT p FROM Properties p WHERE p.typeId =1 ORDER BY p.price DESC")
-    ,@NamedQuery(name = "Properties.findAllResMulti", query = "SELECT p FROM Properties p WHERE p.typeId =2 ORDER BY p.price DESC")
-    ,@NamedQuery(name = "Properties.findAllCommercial", query = "SELECT p FROM Properties p WHERE p.typeId =3 ORDER BY p.price DESC")
     , @NamedQuery(name = "Properties.findById", query = "SELECT p FROM Properties p WHERE p.id = :id")
     , @NamedQuery(name = "Properties.findByStreet", query = "SELECT p FROM Properties p WHERE p.street = :street")
     , @NamedQuery(name = "Properties.findByCity", query = "SELECT p FROM Properties p WHERE p.city = :city")
     , @NamedQuery(name = "Properties.findByListingNum", query = "SELECT p FROM Properties p WHERE p.listingNum = :listingNum")
-    , @NamedQuery(name = "Properties.findByStyleId", query = "SELECT p FROM Properties p WHERE p.styleId = :styleId")
-    , @NamedQuery(name = "Properties.findByTypeId", query = "SELECT p FROM Properties p WHERE p.typeId = :typeId")
     , @NamedQuery(name = "Properties.findByBedrooms", query = "SELECT p FROM Properties p WHERE p.bedrooms = :bedrooms")
     , @NamedQuery(name = "Properties.findByBathrooms", query = "SELECT p FROM Properties p WHERE p.bathrooms = :bathrooms")
     , @NamedQuery(name = "Properties.findBySquarefeet", query = "SELECT p FROM Properties p WHERE p.squarefeet = :squarefeet")
     , @NamedQuery(name = "Properties.findByBerRating", query = "SELECT p FROM Properties p WHERE p.berRating = :berRating")
     , @NamedQuery(name = "Properties.findByLotsize", query = "SELECT p FROM Properties p WHERE p.lotsize = :lotsize")
     , @NamedQuery(name = "Properties.findByGaragesize", query = "SELECT p FROM Properties p WHERE p.garagesize = :garagesize")
-    , @NamedQuery(name = "Properties.findByGarageId", query = "SELECT p FROM Properties p WHERE p.garageId = :garageId")
-    , @NamedQuery(name = "Properties.findByAgentId", query = "SELECT p FROM Properties p WHERE p.agentId = :agentId")
     , @NamedQuery(name = "Properties.findByPhoto", query = "SELECT p FROM Properties p WHERE p.photo = :photo")
     , @NamedQuery(name = "Properties.findByPrice", query = "SELECT p FROM Properties p WHERE p.price = :price")
+    , @NamedQuery(name = "Properties.findTop11Price", query = "SELECT p FROM Properties p ORDER BY p.price DESC")
     , @NamedQuery(name = "Properties.findByDateAdded", query = "SELECT p FROM Properties p WHERE p.dateAdded = :dateAdded")})
 public class Properties implements Serializable {
-
-    @Basic(optional = false)
-    @Column(name = "styleId")
-    private int styleId;
-    @Basic(optional = false)
-    @Column(name = "typeId")
-    private int typeId;
-    @Basic(optional = false)
-    @Column(name = "garageId")
-    private int garageId;
-    @Basic(optional = false)
-    @Column(name = "agentId")
-    private int agentId;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -86,7 +67,6 @@ public class Properties implements Serializable {
     private Float bathrooms;
     @Column(name = "squarefeet")
     private Integer squarefeet;
-    @Basic(optional = false)
     @Column(name = "berRating")
     private String berRating;
     @Lob
@@ -100,22 +80,30 @@ public class Properties implements Serializable {
     private String photo;
     @Column(name = "price")
     private Double price;
-    @Basic(optional = false)
     @Column(name = "dateAdded")
     @Temporal(TemporalType.DATE)
     private Date dateAdded;
+    @JoinColumn(name = "agentId", referencedColumnName = "agentId")
+    @ManyToOne
+    private Agents agentId;
+    @JoinColumn(name = "garageId", referencedColumnName = "garageId")
+    @ManyToOne
+    private Garagetypes garageId;
+    @JoinColumn(name = "typeId", referencedColumnName = "typeId")
+    @ManyToOne
+    private Propertytypes typeId;
+    @JoinColumn(name = "statusId", referencedColumnName = "statusId")
+    @ManyToOne
+    private Propertystatus statusId;
+    @JoinColumn(name = "styleId", referencedColumnName = "styleId")
+    @ManyToOne
+    private Styles styleId;
 
     public Properties() {
     }
 
     public Properties(Integer id) {
         this.id = id;
-    }
-
-    public Properties(Integer id, String berRating, Date dateAdded) {
-        this.id = id;
-        this.berRating = berRating;
-        this.dateAdded = dateAdded;
     }
 
     public Integer getId() {
@@ -149,7 +137,6 @@ public class Properties implements Serializable {
     public void setListingNum(Integer listingNum) {
         this.listingNum = listingNum;
     }
-
 
     public Integer getBedrooms() {
         return bedrooms;
@@ -207,7 +194,6 @@ public class Properties implements Serializable {
         this.garagesize = garagesize;
     }
 
-
     public String getPhoto() {
         return photo;
     }
@@ -230,6 +216,46 @@ public class Properties implements Serializable {
 
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+    public Agents getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(Agents agentId) {
+        this.agentId = agentId;
+    }
+
+    public Garagetypes getGarageId() {
+        return garageId;
+    }
+
+    public void setGarageId(Garagetypes garageId) {
+        this.garageId = garageId;
+    }
+
+    public Propertytypes getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Propertytypes typeId) {
+        this.typeId = typeId;
+    }
+
+    public Propertystatus getStatusId() {
+        return statusId;
+    }
+
+    public void setStatusId(Propertystatus statusId) {
+        this.statusId = statusId;
+    }
+
+    public Styles getStyleId() {
+        return styleId;
+    }
+
+    public void setStyleId(Styles styleId) {
+        this.styleId = styleId;
     }
 
     @Override
@@ -255,38 +281,6 @@ public class Properties implements Serializable {
     @Override
     public String toString() {
         return "classes.entities.Properties[ id=" + id + " ]";
-    }
-
-    public int getStyleId() {
-        return styleId;
-    }
-
-    public void setStyleId(int styleId) {
-        this.styleId = styleId;
-    }
-
-    public int getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(int typeId) {
-        this.typeId = typeId;
-    }
-
-    public int getGarageId() {
-        return garageId;
-    }
-
-    public void setGarageId(int garageId) {
-        this.garageId = garageId;
-    }
-
-    public int getAgentId() {
-        return agentId;
-    }
-
-    public void setAgentId(int agentId) {
-        this.agentId = agentId;
     }
     
 }

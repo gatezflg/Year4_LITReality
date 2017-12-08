@@ -3,17 +3,18 @@
   <persistence-unit name="Assignment3_LITRealtyV2PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>classes.entities.Styles</class>
-    <class>classes.entities.Propertytypes</class>
     <class>classes.entities.Properties</class>
-    <class>classes.entities.Garagetypes</class>
+    <class>classes.entities.Propertystatus</class>
     <class>classes.entities.Agents</class>
+    <class>classes.entities.Propertytypes</class>
+    <class>classes.entities.Garagetypes</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/litrealty?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value=""/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>

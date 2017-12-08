@@ -41,16 +41,14 @@ public class IndexServlet extends HttpServlet {
 
             try {
         
-                List<Agents> list = AgentsDB.getAllAgents();
                 List<Properties> propList = PropertiesDB.getTop11Properties();
 
-                if (list.isEmpty() || propList.isEmpty()) {
+                if ( propList.isEmpty()) {
                     address = "/error.jsp";
                 } else {
 
-                    address = "index.jsp";
+                    address = "/index.jsp";
                     page = "Home";
-                    request.setAttribute("agentsList", list);
                     request.setAttribute("propList", propList);
                     request.setAttribute("page", page);
                 }

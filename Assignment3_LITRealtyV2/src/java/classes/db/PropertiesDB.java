@@ -44,7 +44,7 @@ public class PropertiesDB {
        
         try{
         //create tq and use named query from accounts class
-        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findTop11Price", Properties.class);
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.index error", Properties.class);
          topPropertyList = tq.getResultList();
         
         em.close();

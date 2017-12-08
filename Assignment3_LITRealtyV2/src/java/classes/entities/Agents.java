@@ -6,6 +6,7 @@
 package classes.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,8 +16,10 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -50,29 +53,21 @@ public class Agents implements Serializable {
     private String fax;
     @Column(name = "email")
     private String email;
-    @Basic(optional = false)
     @Column(name = "username")
     private String username;
-    @Basic(optional = false)
     @Lob
     @Column(name = "password")
     private String password;
-    @Basic(optional = false)
     @Column(name = "image")
     private String image;
+    @OneToMany(mappedBy = "agentId")
+    private Collection<Properties> propertiesCollection;
 
     public Agents() {
     }
 
     public Agents(Integer agentId) {
         this.agentId = agentId;
-    }
-
-    public Agents(Integer agentId, String username, String password, String image) {
-        this.agentId = agentId;
-        this.username = username;
-        this.password = password;
-        this.image = image;
     }
 
     public Integer getAgentId() {
@@ -137,6 +132,15 @@ public class Agents implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    @XmlTransient
+    public Collection<Properties> getPropertiesCollection() {
+        return propertiesCollection;
+    }
+
+    public void setPropertiesCollection(Collection<Properties> propertiesCollection) {
+        this.propertiesCollection = propertiesCollection;
     }
 
     @Override

@@ -6,6 +6,7 @@
 package classes.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,8 +15,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -38,6 +41,8 @@ public class Styles implements Serializable {
     private Integer styleId;
     @Column(name = "pStyle")
     private String pStyle;
+    @OneToMany(mappedBy = "styleId")
+    private Collection<Properties> propertiesCollection;
 
     public Styles() {
     }
@@ -60,6 +65,15 @@ public class Styles implements Serializable {
 
     public void setPStyle(String pStyle) {
         this.pStyle = pStyle;
+    }
+
+    @XmlTransient
+    public Collection<Properties> getPropertiesCollection() {
+        return propertiesCollection;
+    }
+
+    public void setPropertiesCollection(Collection<Properties> propertiesCollection) {
+        this.propertiesCollection = propertiesCollection;
     }
 
     @Override
