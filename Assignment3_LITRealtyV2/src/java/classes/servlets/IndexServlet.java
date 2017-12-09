@@ -41,16 +41,16 @@ public class IndexServlet extends HttpServlet {
 
             try {
         
-                List<Properties> propList = PropertiesDB.getTop11Properties();
+                List<Properties> propList = PropertiesDB.getLatestProperties();
 
                 if ( propList.isEmpty()) {
                     address = "/error.jsp";
                 } else {
 
                     address = "/index.jsp";
-                    page = "Home";
+                    page = "Home";request.setAttribute("page", page);
                     request.setAttribute("properties", propList);
-                    request.setAttribute("page", page);
+                    
                 }
 
             }//end try

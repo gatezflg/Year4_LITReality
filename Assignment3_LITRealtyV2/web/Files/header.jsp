@@ -59,7 +59,7 @@
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="index.jsp">Home</a></li>
+               <li class="active"><a href="IndexServlet">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="agents.jsp">Agents</a></li>         
                 <li><a href="blog.jsp">Blog</a></li>
@@ -82,11 +82,11 @@
 
 <!-- Header Starts -->
 <div class="header">
-<a href="index.jsp"><img src="images//site/logo2.jpg" alt="Realestate"></a>
+<a href="IndexServlet"><img src="images//site/logo2.jpg" alt="Realestate"></a>
               <ul class="pull-right">
-                <li><a href="buysalerent.jsp">Buy</a></li>
-                <li><a href="buysalerent.jsp">Sale</a></li>         
-                <li><a href="buysalerent.jsp">Rent</a></li>
+                <li><a href="PropertiesServlet?all">Buy</a></li>
+                <li><a href="buysalerent.jsp">TO DO</a></li>         
+                <li><a href="buysalerent.jsp">TO DO</a></li>
               </ul>
 </div>
 <!-- #Header Starts -->

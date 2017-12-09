@@ -38,21 +38,37 @@ public class PropertiesServlet extends HttpServlet {
        
         
          String address;
-         String type;
+         String page;
             try {
-        
-                Properties property = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("singleView")));
-                if (property == null) {
-                    address = "/error.jsp";
-                } else {
+                if(request.getParameter("singleView") != null){
+                      Properties property = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("singleView")));
+                    if (property == null) {
+                        address = "/error.jsp";
+                    } else {
 
-                    String abso = getServletContext().getRealPath("/images/properties/large/" + property.getPhoto()+"/");
-                    File b = new File(abso);
-                    String[] imageList = b.list();
+                        String abso = getServletContext().getRealPath("/images/properties/large/" + property.getPhoto()+"/");
+                        File b = new File(abso);
+                        String[] imageList = b.list();
 
-                    address = "/property_detail.jsp";
-                    request.setAttribute("property", property);
-                  request.setAttribute("imageList", imageList);
+                        address = "/property_detail.jsp";
+                        page = property.getStreet(); 
+                        request.setAttribute("page", page);
+                        request.setAttribute("property", property);
+                        request.setAttribute("imageList", imageList);
+                    }
+                }else
+                {
+                    List<Properties> allPropList = PropertiesDB.getAllPropertiesOrdered();
+
+                    if ( allPropList.isEmpty()) {
+                        address = "/error.jsp";
+                    } else {
+
+                        address = "/allProperties.jsp";
+                        page = "Gallary";request.setAttribute("page", page);
+                        request.setAttribute("allPropList", allPropList);
+
+                    }
                 }
             }//end try
             catch (Exception ex) {

@@ -100,17 +100,19 @@
 <div class="row">
 
      <!-- properties -->
+     <c:forEach items="${allPropList}" var="house">
       <div class="col-lg-4 col-sm-6">
       <div class="properties">
-        <div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties">
-          <div class="status sold">Sold</div>
+        <div class="image-holder"><img style="height:150px; width: 100%;"  src="images/properties/large/${house.photo}/${house.photo}.JPG" class="img-responsive" alt="properties">
+          <div class="status sold">${house.statusId.status}</div>
         </div>
-        <h4><a href="property_detail.jsp">Royal Inn</a></h4>
-        <p class="price">Price: $234,900</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="property_detail.jsp">View Details</a>
+        <h4><a href="PropertiesServlet?singleView=${house.id}">${house.city}</a></h4>
+        <p class="price">Price: <fmt:formatNumber value="${house.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></p>
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bedrooms">${house.bedrooms}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bathrooms">${house.bathrooms}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">${house.garagesize}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Ber Rating">${house.berRating}</span></div>
+        <a class="btn btn-primary" href="PropertiesServlet?singleView=${house.id}">View Details</a>
       </div>
       </div>
+      </c:forEach>
       <!-- properties -->
 
 

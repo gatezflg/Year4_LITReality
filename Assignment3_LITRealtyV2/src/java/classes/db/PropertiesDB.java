@@ -6,6 +6,10 @@
 package classes.db;
 
 import classes.entities.Properties;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -15,7 +19,7 @@ import javax.persistence.TypedQuery;
  * @author gatez1511
  */
 public class PropertiesDB {
-    
+ 
     
      public static List<Properties> getAllProperties() 
      {
@@ -36,23 +40,45 @@ public class PropertiesDB {
        return allPropertyList;
     }
      
-          public static List<Properties> getTop11Properties() 
+     
+      public static List<Properties> getAllPropertiesOrdered() 
      {
     
-        List<Properties> topPropertyList = null;
+        List<Properties> allPropertyList = null;
         EntityManager em = DBUtil.getEmf().createEntityManager();
        
         try{
         //create tq and use named query from accounts class
-        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findTop11Price", Properties.class);
-         topPropertyList = tq.setMaxResults(11).getResultList();
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findAllOrdered", Properties.class);
+         allPropertyList = tq.getResultList();
         
         em.close();
        }catch(Exception ex){
            System.out.println(ex.getMessage());
             em.close();
        }
-       return topPropertyList;
+       return allPropertyList;
+    }
+            
+     public static List<Properties> getLatestProperties() 
+     {
+        
+        List<Properties> latestPropertiesList = null;
+        EntityManager em = DBUtil.getEmf().createEntityManager();
+        Date today = new Date(System.currentTimeMillis());
+        
+        try{
+        //create tq and use named query from accounts class
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findLatestProperties", Properties.class);
+        tq.setParameter("oneWeekAgo", removeTime(today));
+        latestPropertiesList = tq.getResultList();
+        
+        em.close();
+       }catch(Exception ex){
+           System.out.println(ex.getMessage());
+            em.close();
+       }
+       return latestPropertiesList;
     }
      
     public static List<Properties> getAllResSingle() 
@@ -138,6 +164,17 @@ public class PropertiesDB {
     public static void insertProperty(Properties account) {
 
         //insert account object
+    }
+    
+       public static Date removeTime(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        cal.set(Calendar.HOUR, -168);
+        return cal.getTime();
     }
 
 }

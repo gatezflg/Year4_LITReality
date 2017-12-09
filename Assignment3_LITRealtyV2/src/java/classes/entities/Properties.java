@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Properties.findAll", query = "SELECT p FROM Properties p")
+    , @NamedQuery(name = "Properties.findAllOrdered", query = "SELECT p FROM Properties p ORDER BY p.city ASC")
     , @NamedQuery(name = "Properties.findById", query = "SELECT p FROM Properties p WHERE p.id = :id")
     , @NamedQuery(name = "Properties.findByStreet", query = "SELECT p FROM Properties p WHERE p.street = :street")
     , @NamedQuery(name = "Properties.findByCity", query = "SELECT p FROM Properties p WHERE p.city = :city")
@@ -44,7 +45,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Properties.findByGaragesize", query = "SELECT p FROM Properties p WHERE p.garagesize = :garagesize")
     , @NamedQuery(name = "Properties.findByPhoto", query = "SELECT p FROM Properties p WHERE p.photo = :photo")
     , @NamedQuery(name = "Properties.findByPrice", query = "SELECT p FROM Properties p WHERE p.price = :price")
-    , @NamedQuery(name = "Properties.findTop11Price", query = "SELECT p FROM Properties p ORDER BY p.price DESC")
+    , @NamedQuery(name = "Properties.findLatestProperties", query = "SELECT p FROM Properties p WHERE p.dateAdded > :oneWeekAgo")
     , @NamedQuery(name = "Properties.findByDateAdded", query = "SELECT p FROM Properties p WHERE p.dateAdded = :dateAdded")})
 public class Properties implements Serializable {
 

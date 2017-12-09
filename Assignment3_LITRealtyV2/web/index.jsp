@@ -113,7 +113,7 @@
               </select>
               </div>
               <div class="col-lg-3 col-sm-4">
-              <button class="btn btn-success"  onclick="window.location.href='buysalerent.jsp'">Find Now</button>
+              <button class="btn btn-success"  onclick="window.location.href='PropertiesServlet?all'">Find Now</button>
               </div>
           </div>
           
@@ -125,17 +125,17 @@
 </div>
 <!-- banner -->
 <div class="container">
-  <div class="properties-listing spacer"> <a href="buysalerent.jsp" class="pull-right viewall">View All Listing</a>
-    <h2>Featured Properties</h2>
+  <div class="properties-listing spacer"> <a href="PropertiesServlet?all" class="pull-right viewall">View All Listing</a>
+    <h2>Latest Properties</h2>
     <div id="owl-example" class="owl-carousel">
         <c:forEach items="${properties}" var="house">
           <div class="properties">
-            <div style="height:150px;" class="image-holder"><img style="height:150px;" src="images/properties/large/${house.photo}/${house.photo}.JPG" class="img-responsive" alt="properties"/>
+            <div class="image-holder"><img style="height:150px; width: auto;" src="images/properties/large/${house.photo}/${house.photo}.JPG" class="img-responsive" alt="properties"/>
               <div class="status sold">${house.statusId.status}</div>
             </div>
             <h4><a href="PropertiesServlet?singleView=${house.id}">${house.city}</a></h4>
             <p class="price">Price: <fmt:formatNumber value="${house.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></p>
-            <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bedrooms">${house.bedrooms}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bathrooms">${house.bathrooms}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">${house.garagesize}</span> </div>
+            <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bedrooms">${house.bedrooms}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bathrooms">${house.bathrooms}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">${house.garagesize}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Ber Rating">${house.berRating}</span></div>
             <a class="btn btn-primary" href="PropertiesServlet?singleView=${house.id}">View Details</a>
           </div>
         </c:forEach>
