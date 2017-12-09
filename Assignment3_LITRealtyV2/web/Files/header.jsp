@@ -82,8 +82,7 @@
 
 <!-- Header Starts -->
 <div class="header">
-<a href="index.jsp"><img src="images/logo.png" alt="Realestate"></a>
-
+<a href="index.jsp"><img src="images//site/logo2.jpg" alt="Realestate"></a>
               <ul class="pull-right">
                 <li><a href="buysalerent.jsp">Buy</a></li>
                 <li><a href="buysalerent.jsp">Sale</a></li>         

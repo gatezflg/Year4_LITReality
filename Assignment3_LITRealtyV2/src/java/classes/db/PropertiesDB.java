@@ -25,7 +25,7 @@ public class PropertiesDB {
        
         try{
         //create tq and use named query from accounts class
-        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findAllOrdered", Properties.class);
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findAll", Properties.class);
          allPropertyList = tq.getResultList();
         
         em.close();
@@ -44,8 +44,8 @@ public class PropertiesDB {
        
         try{
         //create tq and use named query from accounts class
-        TypedQuery<Properties> tq = em.createNamedQuery("Properties.index error", Properties.class);
-         topPropertyList = tq.getResultList();
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findTop11Price", Properties.class);
+         topPropertyList = tq.setMaxResults(11).getResultList();
         
         em.close();
        }catch(Exception ex){

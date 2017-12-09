@@ -49,7 +49,7 @@ public class IndexServlet extends HttpServlet {
 
                     address = "/index.jsp";
                     page = "Home";
-                    request.setAttribute("propList", propList);
+                    request.setAttribute("properties", propList);
                     request.setAttribute("page", page);
                 }
 
