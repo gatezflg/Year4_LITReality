@@ -40,6 +40,25 @@ public class PropertiesDB {
        return allPropertyList;
     }
      
+     public static List<Properties> getRecommendedProperties() 
+     {
+    
+        List<Properties> recommendedList = null;
+        EntityManager em = DBUtil.getEmf().createEntityManager();
+       
+        try{
+        //create tq and use named query from accounts class
+        TypedQuery<Properties> tq = em.createNamedQuery("Properties.findRecommended", Properties.class);
+         recommendedList = tq.setMaxResults(4).getResultList();
+        
+        em.close();
+       }catch(Exception ex){
+           System.out.println(ex.getMessage());
+            em.close();
+       }
+       return recommendedList;
+    }
+     
      
       public static List<Properties> getAllPropertiesOrdered() 
      {

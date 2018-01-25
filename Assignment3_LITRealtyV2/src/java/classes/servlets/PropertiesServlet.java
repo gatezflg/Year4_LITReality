@@ -7,10 +7,14 @@ package classes.servlets;
 
 import classes.db.PropertiesDB;
 import classes.entities.Properties;
+import classes.entities.Styles;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.MessageFormat;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -41,11 +45,14 @@ public class PropertiesServlet extends HttpServlet {
          String page;
             try {
                 if(request.getParameter("singleView") != null){
-                      Properties property = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("singleView")));
+                    Properties property = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("singleView")));
                     if (property == null) {
                         address = "/error.jsp";
+                        page = "Error!!";
+                        request.setAttribute("page", page);
                     } else {
 
+                        List<Properties> recommenedList = PropertiesDB.getRecommendedProperties();
                         String abso = getServletContext().getRealPath("/images/properties/large/" + property.getPhoto()+"/");
                         File b = new File(abso);
                         String[] imageList = b.list();
@@ -55,24 +62,52 @@ public class PropertiesServlet extends HttpServlet {
                         request.setAttribute("page", page);
                         request.setAttribute("property", property);
                         request.setAttribute("imageList", imageList);
+                        request.setAttribute("recommened", recommenedList);
                     }
                 }else
                 {
                     List<Properties> allPropList = PropertiesDB.getAllPropertiesOrdered();
+                    List<Properties> recommenedList = PropertiesDB.getRecommendedProperties();
 
                     if ( allPropList.isEmpty()) {
                         address = "/error.jsp";
+                        page = "Error!!";
+                        request.setAttribute("page", page);
                     } else {
-
+                        SortedSet cities = new TreeSet();
+                        SortedSet styles = new TreeSet();
+                        SortedSet beds = new TreeSet();
+                        
+                        
+                        for(final Properties property : allPropList){
+                            String city = property.getCity();
+                            Styles styletype = property.getStyleId();
+                            String style = styletype.getPStyle();
+                            Integer bed = property.getBedrooms();
+                            cities.add(city);
+                            styles.add(style);
+                            beds.add(bed);
+                            
+                        }
+                        
                         address = "/allProperties.jsp";
-                        page = "Gallary";request.setAttribute("page", page);
-                        request.setAttribute("allPropList", allPropList);
+                        page = "All Listings";
+                        request.setAttribute("page", page);
+                        request.setAttribute("cities", cities);
+                        request.setAttribute("styles", styles);
+                        request.setAttribute("beds", beds);
+                        request.setAttribute("returnPropList", allPropList);
+                        request.setAttribute("recommened", recommenedList);
 
                     }
                 }
             }//end try
             catch (Exception ex) {
-                address = "/error.jsp";
+                 address = "/error.jsp";
+                 page = "Error!!";
+                request.setAttribute("page", page);
+                String message = MessageFormat.format("Error message: {0} ", ex);
+                request.setAttribute("message", message);
             }//end catch
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);

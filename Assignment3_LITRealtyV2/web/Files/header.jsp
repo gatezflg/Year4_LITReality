@@ -33,11 +33,15 @@
         <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
         <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+            <style>
+              #map {
+                height: 400px;
+                width: 100%;
+                background-color: grey;
+               }
+            </style>
 </head>
-
 <body>
-
-
 <!-- Header Starts -->
 <div class="navbar-wrapper">
 
@@ -60,9 +64,9 @@
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
                <li class="active"><a href="IndexServlet">Home</a></li>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="agents.jsp">Agents</a></li>         
-                <li><a href="blog.jsp">Blog</a></li>
+                <li><a href="PropertiesServlet?all">All Properties</a></li>
+                <li><a href="FavouritesServlet?all">Favourites</a></li>
+                <li><a href="agents.jsp">Agents</a></li>
                 <li><a href="contact.jsp">Contact</a></li>
               </ul>
             </div>

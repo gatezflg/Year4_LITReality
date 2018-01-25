@@ -11,6 +11,7 @@ import classes.entities.Agents;
 import classes.entities.Properties;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.MessageFormat;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,20 +43,20 @@ public class IndexServlet extends HttpServlet {
             try {
         
                 List<Properties> propList = PropertiesDB.getLatestProperties();
-
-                if ( propList.isEmpty()) {
-                    address = "/error.jsp";
-                } else {
-
+                List<Properties> recommenedList = PropertiesDB.getRecommendedProperties();
                     address = "/index.jsp";
                     page = "Home";request.setAttribute("page", page);
                     request.setAttribute("properties", propList);
+                    request.setAttribute("recommened", recommenedList);
                     
-                }
 
             }//end try
             catch (Exception ex) {
                 address = "/error.jsp";
+                page = "Error!!";
+                request.setAttribute("page", page);
+                String message = MessageFormat.format("Error message: {0} ", ex);
+                request.setAttribute("message", message);
             }//end catch
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);
