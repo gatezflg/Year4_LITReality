@@ -120,17 +120,12 @@ var geocoder;
 <div class="property-info">
 <p class="price"> <fmt:formatNumber value="${property.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></p>
   <p class="area"><span class="glyphicon glyphicon-map-marker"></span><span id="address"> ${property.street}, ${property.city}</span></p>
-  
-  <div class="profile">
-  <span class="glyphicon glyphicon-user"></span> Agent Details
-  <p>${property.agentId.name}<br>${property.agentId.phone}<br>${property.agentId.email}</p>
-  </div>
-</div>
 
     <h6><span class="glyphicon glyphicon-home"></span> Availability</h6>
     <div class="listing-detail">
     <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bedrooms">${property.bedrooms}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bathrooms">${property.bathrooms}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">${property.garagesize}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Ber Rating">${property.berRating}</span></div>
-    <c:choose>
+
+  <c:choose>
         <c:when test="${empty cookieSuccess}">
             <a href="FavouritesServlet?propID=${property.id}"><button class="btn btn-primary">Favourite <span class="glyphicon glyphicon-heart-empty"></span></button></a>
         </c:when>
@@ -138,8 +133,12 @@ var geocoder;
             <button class="btn btn-primary">Favourite <span class="glyphicon glyphicon-heart"></span></button>
         </c:otherwise>
     </c:choose>
-    
-    <br>
+            
+  <div class="profile">
+  <span class="glyphicon glyphicon-user"></span> Agent Details
+  <p>${property.agentId.name}<br>${property.agentId.phone}<br>${property.agentId.email}</p>
+  </div>
+</div>
 </div>
 <div class="col-lg-12 col-sm-6 ">
 <div class="enquiry">

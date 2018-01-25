@@ -88,27 +88,28 @@ public class FavouritesServlet extends HttpServlet {
                     List<Properties> recommenedList = PropertiesDB.getRecommendedProperties();
                     
                     String id = request.getParameter("delete");
-                    Cookie cookie = null;
                     //Get an array of Cookies associated with this domain
                     Cookie[] cookies = request.getCookies();
                     
                     if (cookies != null){
                         for (Cookie cookie1 : cookies) {
-                            for(Properties prop : allPropList){
-                                if(cookie1.getName().equals(String.valueOf(prop.getId()))){
-                                    favList.add(prop);
-                                }
-                            }
-                            if(cookie1.getName() == null ? id == null : cookie1.getName().equals(id)){
-                                Properties remove = PropertiesDB.getPropertyByID(Integer.parseInt(id));
-                                favList.remove(remove);
+                            if(cookie1.getName().equals(id)){
                                 cookie1.setMaxAge(0);
-                                cookie1.setValue("");
-                                cookie1.setPath("/");
+                                response.addCookie(cookie1);
                             } 
-                            
                         }
                     }
+                      Cookie[] newCookies = request.getCookies();
+                      
+                      if(newCookies != null){
+                          for(Cookie cooki : newCookies){   
+                          for(Properties prop : allPropList){
+                             if(String.valueOf(prop.getId()).equals(cooki.getName())){
+                                 favList.add(prop);
+                             } 
+                          }
+                       }
+                      }
                     address = "/favourites.jsp";
                     page = "Lsit of Favourites";
                     request.setAttribute("page", page);
