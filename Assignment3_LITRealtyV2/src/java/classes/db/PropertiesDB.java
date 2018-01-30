@@ -161,7 +161,6 @@ public class PropertiesDB {
         
         Properties a = null;
         EntityManager em = DBUtil.getEmf().createEntityManager();
-        int cont =0;
         try{
             
         a = em.createNamedQuery("Properties.findById", Properties.class).setParameter("id", id).getSingleResult();

@@ -50,6 +50,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Properties.findByDateAdded", query = "SELECT p FROM Properties p WHERE p.dateAdded = :dateAdded")})
 public class Properties implements Serializable {
 
+    @JoinColumn(name = "vendorId", referencedColumnName = "vendorId")
+    @ManyToOne
+    private Vendors vendorId;
+
     private static final long serialVersionUID = 1L;
 
     public static Object stream() {
@@ -287,6 +291,14 @@ public class Properties implements Serializable {
     @Override
     public String toString() {
         return "classes.entities.Properties[ id=" + id + " ]";
+    }
+
+    public Vendors getVendorId() {
+        return vendorId;
+    }
+
+    public void setVendorId(Vendors vendorId) {
+        this.vendorId = vendorId;
     }
     
 }

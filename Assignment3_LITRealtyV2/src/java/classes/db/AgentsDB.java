@@ -15,41 +15,41 @@ import javax.persistence.TypedQuery;
  * @author gatez1511
  */
 public class AgentsDB {
-        public static List<Agents> getAllAgents() {
-    
+
+    public static List<Agents> getAllAgents() {
+
         List<Agents> allAgentsList = null;
         EntityManager em = DBUtil.getEmf().createEntityManager();
-       
-        try{
-        //create tq and use named query from accounts class
-        TypedQuery<Agents> tq = em.createNamedQuery("Agents.findAll", Agents.class);
-         allAgentsList = tq.getResultList();
-        
-        em.close();
-       }catch(Exception ex){
-           System.out.println(ex.getMessage());
+
+        try {
+            //create tq and use named query from accounts class
+            TypedQuery<Agents> tq = em.createNamedQuery("Agents.findAll", Agents.class);
+            allAgentsList = tq.getResultList();
+
             em.close();
-       }
-       return allAgentsList;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            em.close();
+        }
+        return allAgentsList;
     }//end getAllAgents
 
-    public static Agents getAgentsByID(int id) {
-        
+    public static Agents getAgentByUsername(String user) {
+        //findByName
         Agents a = null;
         EntityManager em = DBUtil.getEmf().createEntityManager();
-        int cont =0;
-        try{
+        
+        try {
+            a = em.createNamedQuery("Agents.findByUsername", Agents.class).setParameter("username", user).getSingleResult();
+            em.close();
             
-        a = em.find(Agents.class, id);
-
-        em.close();
-        }catch(Exception ex){
-         System.out.println(ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
             em.close();
         }
         return a;
 
-    }//end getAccountByID
+    }//end getAgentByUsername
 
     public static void deleteAccountByID(int id) {
 

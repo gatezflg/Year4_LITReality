@@ -38,119 +38,115 @@ public class FavouritesServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-        
-         String address;
-         String page;
-         String message, cookieSuccess;
-         List<Properties> favList = new LinkedList<>();
-            try {
-                List<Properties> allPropList = PropertiesDB.getAllPropertiesOrdered();
-                
-                if(request.getParameter("propID") != null){
-                    Properties property = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("propID")));
-                    String propId = String.valueOf(property.getId());
-                    
-                    Cookie[] cookies = request.getCookies();
-                    boolean foundCookie = false;
-                    
-                    for (Cookie cookie1 : cookies) {
-                        if (cookie1.getName().equals(propId)) {
-                            foundCookie = true;
-                            cookieSuccess = "This Property has been added to your favourites";
-                            request.setAttribute("cookieSuccess", cookieSuccess);
-                        }
-                    }
-                    if (!foundCookie) {
-                        Cookie cookie1 = new Cookie(propId, String.valueOf(property.getListingNum()));
-                        cookie1.setMaxAge(31557600);
-                        response.addCookie(cookie1); 
+
+        String address;
+        String page;
+        String message, cookieSuccess;
+        List<Properties> favList = new LinkedList<>();
+        try {
+            List<Properties> allPropList = PropertiesDB.getAllPropertiesOrdered();
+
+            if (request.getParameter("propID") != null) {
+                Properties property = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("propID")));
+                String propId = String.valueOf(property.getId());
+
+                Cookie[] cookies = request.getCookies();
+                boolean foundCookie = false;
+
+                for (Cookie cookie1 : cookies) {
+                    if (cookie1.getName().equals(propId)) {
+                        foundCookie = true;
                         cookieSuccess = "This Property has been added to your favourites";
                         request.setAttribute("cookieSuccess", cookieSuccess);
                     }
+                }
+                if (!foundCookie) {
+                    Cookie cookie1 = new Cookie(propId, String.valueOf(property.getListingNum()));
+                    cookie1.setMaxAge(31557600);
+                    response.addCookie(cookie1);
+                    cookieSuccess = "This Property has been added to your favourites";
+                    request.setAttribute("cookieSuccess", cookieSuccess);
+                }
 
-                    String abso = getServletContext().getRealPath("/images/properties/large/" + property.getPhoto()+"/");
-                    File b = new File(abso);
-                    String[] imageList = b.list();
-                    String id = String.valueOf(property.getId());
+                String abso = getServletContext().getRealPath("/images/properties/large/" + property.getPhoto() + "/");
+                File b = new File(abso);
+                String[] imageList = b.list();
+                String id = String.valueOf(property.getId());
 
-                    address = "PropertiesServlet?singleView=" + id;
-                    
-                    page = property.getStreet(); 
-                    request.setAttribute("page", page);
-                    request.setAttribute("property", property);
-                    request.setAttribute("imageList", imageList);
-                    
-                    
-                }else if(request.getParameter("delete") != null){
-                    
-                    List<Properties> recommenedList = PropertiesDB.getRecommendedProperties();
-                    
-                    String id = request.getParameter("delete");
-                    //Get an array of Cookies associated with this domain
-                    Cookie[] cookies = request.getCookies();
-                    
-                    if (cookies != null){
-                        for (Cookie cookie1 : cookies) {
-                            if(cookie1.getName().equals(id)){
-                                cookie1.setMaxAge(0);
-                                response.addCookie(cookie1);
-                            } 
+                address = "PropertiesServlet?singleView=" + id;
+
+                page = property.getStreet();
+                request.setAttribute("page", page);
+                request.setAttribute("property", property);
+                request.setAttribute("imageList", imageList);
+
+            } else if (request.getParameter("delete") != null) {
+
+                List<Properties> recommenedList = PropertiesDB.getRecommendedProperties();
+
+                String id = request.getParameter("delete");
+                //Get an array of Cookies associated with this domain
+                Cookie[] cookies = request.getCookies();
+
+                if (cookies != null) {
+                    for (Cookie cookie1 : cookies) {
+                        if (cookie1.getName().equals(id)) {
+                            cookie1.setMaxAge(0);
+                            response.addCookie(cookie1);
                         }
                     }
-                      Cookie[] newCookies = request.getCookies();
-                      
-                      if(newCookies != null){
-                          for(Cookie cooki : newCookies){   
-                          for(Properties prop : allPropList){
-                             if(String.valueOf(prop.getId()).equals(cooki.getName())){
-                                 favList.add(prop);
-                             } 
-                          }
-                       }
-                      }
-                    address = "/favourites.jsp";
-                    page = "Lsit of Favourites";
-                    request.setAttribute("page", page);
-                    request.setAttribute("favs", favList);
-                    request.setAttribute("recommened", recommenedList);
-            }
-                else{
-                    
-                    List<Properties> recommenedList = PropertiesDB.getRecommendedProperties();
-                    
-                    Cookie cookie = null;
-                    //Get an array of Cookies associated with this domain
-                    Cookie[] cookies = request.getCookies();
-                    
-                    if (cookies != null){
-                        for (Cookie cookie1 : cookies) {
-                            for(Properties prop : allPropList){
-                                if(cookie1.getName().equals(String.valueOf(prop.getId()))){
-                                    favList.add(prop);
-                                }
+                }
+                Cookie[] newCookies = request.getCookies();
+
+                if (newCookies != null) {
+                    for (Cookie cooki : newCookies) {
+                        for (Properties prop : allPropList) {
+                            if (String.valueOf(prop.getId()).equals(cooki.getName())) {
+                                favList.add(prop);
                             }
                         }
-                  }
-                    address = "/favourites.jsp";
-                    page = "Lsit of Favourites";
-                    request.setAttribute("page", page);
-                    request.setAttribute("favs", favList);
-                    request.setAttribute("recommened", recommenedList);
+                    }
                 }
-            }//end try
-            catch (Exception ex) {
-                address = "/error.jsp";
-                page = "Error!!";
+                address = "/favourites.jsp";
+                page = "List of Favourites";
                 request.setAttribute("page", page);
-                 message = MessageFormat.format("Error message: {0} ", ex);
-                request.setAttribute("message", message);
-            }//end catch
-            
-            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-            dispatcher.include(request, response);
-        
+                request.setAttribute("favs", favList);
+                request.setAttribute("recommened", recommenedList);
+            } else {
+
+                List<Properties> recommenedList = PropertiesDB.getRecommendedProperties();
+
+                Cookie cookie = null;
+                //Get an array of Cookies associated with this domain
+                Cookie[] cookies = request.getCookies();
+
+                if (cookies != null) {
+                    for (Cookie cookie1 : cookies) {
+                        for (Properties prop : allPropList) {
+                            if (cookie1.getName().equals(String.valueOf(prop.getId()))) {
+                                favList.add(prop);
+                            }
+                        }
+                    }
+                }
+                address = "/favourites.jsp";
+                page = "List of Favourites";
+                request.setAttribute("page", page);
+                request.setAttribute("favs", favList);
+                request.setAttribute("recommened", recommenedList);
+            }
+        }//end try
+        catch (Exception ex) {
+            address = "/error.jsp";
+            page = "Error!!";
+            request.setAttribute("page", page);
+            message = MessageFormat.format("Error message: {0} ", ex);
+            request.setAttribute("message", message);
+        }//end catch
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+        dispatcher.include(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

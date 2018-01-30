@@ -79,35 +79,35 @@
   <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
     <div id="map"></div>
     <script>
-var geocoder;
-  var map;
-  function initMap() {
-    geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
-    var mapOptions = {
-      zoom: 15,
-      center: latlng
-    }
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    
-    geocodeAddress(geocoder, map);
-  }
-  
+        var geocoder;
+          var map;
+          function initMap() {
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(-34.397, 150.644);
+            var mapOptions = {
+              zoom: 15,
+              center: latlng
+            }
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-  function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById('address').innerHTML;
-    geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: resultsMap,
-            position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
+            geocodeAddress(geocoder, map);
+          }
+
+
+          function geocodeAddress(geocoder, resultsMap) {
+            var address = document.getElementById('address').innerHTML;
+            geocoder.geocode( { 'address': address}, function(results, status) {
+              if (status == 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: resultsMap,
+                    position: results[0].geometry.location
+                });
+              } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+              }
+            });
+          }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfRUgP7zWW7vO74O6qPILCQIJSdz0xGoY&callback=initMap">
