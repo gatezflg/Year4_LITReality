@@ -9,6 +9,7 @@ package classes.db;
 import classes.entities.Vendors;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 /**
  *
@@ -50,4 +51,25 @@ public class VendorDB {
         return a;
 
     }//end getVendorByID
+
+    
+     public static void insertVendor(Vendors vendor) {
+         //insert vendor object
+        EntityManager em = null;
+        EntityTransaction trans = null;
+        int count =0;
+        try {
+            em = DBUtil.getEmf().createEntityManager();
+            trans = em.getTransaction();
+            
+            trans.begin();
+            em.persist(vendor);
+            trans.commit();
+            
+        } catch (Exception ex) {
+            System.out.println(ex);
+        } finally {
+            em.close();
+        }
+    }//end insertVendor
 }

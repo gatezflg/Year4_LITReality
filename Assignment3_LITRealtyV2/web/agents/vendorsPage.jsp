@@ -53,7 +53,7 @@
                                                         <td class="image-holder"><a href="PropertiesServlet?singleView=${house.id}"><img style="height:100px; width: 70%;" src="images/properties/large/${house.photo}/${house.photo}.JPG" class="img-responsive" alt="properties"></a></td>
                                                         <td>${house.city}</td>
                                                         <td class="price"><fmt:formatNumber value="${house.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></td>
-                                                        <td><p data-placement="top" data-toggle="tooltip" title="Property"><button class="btn btn-default btn-xs" ><span class="glyphicon glyphicon-home"></span></button></p></td>
+                                                        <td><p data-placement="top" data-toggle="tooltip" title="Property"><a href="AgentServlet?propId=${house.id}"><button class="btn btn-default btn-xs" ><span class="glyphicon glyphicon-home"></span></button></a></p></td>
                                                     </tr>
                                                 </c:forEach>
                                             </tbody>
@@ -66,9 +66,6 @@
                     </div>
                     <!-- /.panel-body -->
                 </div>
-
-
-
             </c:when>
             <c:when test="${not empty addingVendor}">
                 <c:set var="vendor" value="${selectedVendor}"/>
@@ -92,7 +89,7 @@
                     <!-- /.panel-body -->
                 </div>
             </c:when>
-            <c:when test="${empty selectedVendor and empty add}">
+            <c:when test="${not empty vendorList}">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-bar-chart-o fa-fw"></i> List of Vendors
@@ -123,8 +120,7 @@
                                         </table>
                                         <div class="clearfix"></div>
                                     </div>
-                                    <div class="col-md-4">
-
+                                    <div class="col-md-4" style="padding-top: 10px">
                                         <a href="VendorsServlet?add=1"><button class="btn btn-warning btn-lg">Add Vendor</button></a>
                                     </div>
                                 </div>
@@ -135,9 +131,6 @@
                 </div>
             </c:when>
         </c:choose>
-
-
-
         <!-- /.panel -->
     </div>
     <!-- /.col-lg-8 -->

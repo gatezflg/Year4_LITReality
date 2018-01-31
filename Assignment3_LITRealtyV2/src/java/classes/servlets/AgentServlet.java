@@ -6,9 +6,11 @@
 package classes.servlets;
 
 import classes.db.PropertiesDB;
+import classes.db.VendorDB;
 import classes.entities.Agents;
 import classes.entities.Properties;
 import classes.entities.Vendors;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.MessageFormat;
@@ -46,33 +48,79 @@ public class AgentServlet extends HttpServlet {
             HttpSession sess = request.getSession();
             Agents a = (Agents) sess.getAttribute("agent");
 
+            List<Vendors> vendorList = VendorDB.getAllVendors();
             List<Properties> allPropList = PropertiesDB.getAllPropertiesOrdered();
             List<Properties> agentProperties = new ArrayList<>();
-            SortedSet vendorList = new java.util.TreeSet();
 
             for (Properties p : allPropList) {
                 if (p.getAgentId().equals(a)) {
                     agentProperties.add(p);
                 }
-                Vendors v = p.getVendorId();
-                String vendor = v.getName();
-                vendorList.add(vendor);
             }
 
-            page = "Agent's Portfolio";
-            title = a.getName() + "'s Property Portfolio";
-            address = "/agents/agentPortfolio.jsp";
-            request.setAttribute("agent", a);
-            request.setAttribute("allProps", allPropList);
-            request.setAttribute("agentProps", agentProperties);
-            request.setAttribute("page", page);
-            request.setAttribute("title", title);
-            request.setAttribute("vendorList", vendorList);
+            if (request.getParameter("allProp") != null) {
 
+                String list = "all";
+                page = "All Properties";
+                title ="All Properties";
+                address = "/agents/agentPortfolio.jsp";
+                request.setAttribute("agent", a);
+                request.setAttribute("allProps", allPropList);
+                request.setAttribute("agentProps", agentProperties);
+                request.setAttribute("page", page);
+                request.setAttribute("title", title);
+                request.setAttribute("vendorList", vendorList);
+                request.setAttribute("list", list);
+                
+            } else if(request.getParameter("propId") != null){
+                   
+                Properties property = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("propId")));
+                    if (property == null) {
+                        address = "/agents/agentErrors.jsp";
+                        page = "Error!!";
+                        request.setAttribute("page", page);
+                    } else {
+
+                        String abso = getServletContext().getRealPath("/images/properties/large/" + property.getPhoto()+"/");
+                        File b = new File(abso);
+                        String[] imageList = b.list();
+                        
+                        page = property.getStreet();
+                        title = "Single Property View";
+                        address = "/agents/singleView.jsp";
+                        request.setAttribute("agent", a);
+                        request.setAttribute("allProps", allPropList);
+                        request.setAttribute("agentProps", agentProperties);
+                        request.setAttribute("page", page);
+                        request.setAttribute("title", title);
+                        request.setAttribute("vendorList", vendorList);
+                        request.setAttribute("imageList", imageList);
+                        request.setAttribute("house", property);
+                        
+                    }
+                    
+            }
+            else if (request.getParameter("addProp") != null) {
+                
+                address = "dvda";
+            } else {
+                
+                String list = "agents";
+                page = "Agent's Portfolio";
+                title = a.getName() + "'s Property Portfolio";
+                address = "/agents/agentPortfolio.jsp";
+                request.setAttribute("agent", a);
+                request.setAttribute("allProps", allPropList);
+                request.setAttribute("agentProps", agentProperties);
+                request.setAttribute("page", page);
+                request.setAttribute("title", title);
+                request.setAttribute("vendorList", vendorList);
+                request.setAttribute("list", list);
+            }
 
         } catch (Exception ex) {
 
-            address = "/error.jsp";
+            address = "/agents/agentErrors.jsp";
             page = "Error!!";
             title = "An error has occured!";
             request.setAttribute("page", page);

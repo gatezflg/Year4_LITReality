@@ -2,44 +2,88 @@
 <div class="row">
     <div class="col-lg-8">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> Portfolio Listings
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-                <div id="morris-area">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="table-responsive">
-                                <table id="mytable" class="table table-bordred table-striped">
-                                    <thead>
-                                    <th> </th>
-                                    <th>City</th>
-                                    <th>Price</th>
-                                    <th>Vendor</th>
-                                    <th>View Vendor</th>
-                                    <th>View Detail</th>
-                                    </thead>
-                                    <tbody>
-                                        <c:forEach items="${agentProps}" var="house">
-                                            <tr>
-                                                <td class="image-holder"><a href="PropertiesServlet?singleView=${house.id}"><img style="height:100px; width: 70%;" src="images/properties/large/${house.photo}/${house.photo}.JPG" class="img-responsive" alt="properties"></a></td>
-                                                <td>${house.city}</td>
-                                                <td class="price"><fmt:formatNumber value="${house.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></td>
-                                                <td>${house.vendorId.name}</td>
-                                                <td><p data-placement="top" data-toggle="tooltip" title="Vendor"><a href="VendorsServlet?vendorId=${house.vendorId.vendorId}"><button class="btn btn-primary btn-xs"  ><span class="glyphicon glyphicon-share"></span></button></a></p></td>
-                                                <td><p data-placement="top" data-toggle="tooltip" title="Property"><button class="btn btn-default btn-xs" ><span class="glyphicon glyphicon-home"></span></button></p></td>
-                                            </tr>
-                                        </c:forEach>
-                                    </tbody>
-                                </table>
-                                <div class="clearfix"></div>
+            <c:choose>
+                <c:when test="${list == 'agents'}">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> Portfolio Listings
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="morris-area">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table id="mytable" class="table table-bordred table-striped">
+                                            <thead>
+                                            <th> </th>
+                                            <th>City</th>
+                                            <th>Price</th>
+                                            <th>Vendor</th>
+                                            <th>View Vendor</th>
+                                            <th>View Detail</th>
+                                            </thead>
+                                            <tbody>
+                                                <c:forEach items="${agentProps}" var="house">
+                                                    <tr>
+                                                        <td class="image-holder"><a href="PropertiesServlet?singleView=${house.id}"><img style="height:100px; width: 70%;" src="images/properties/large/${house.photo}/${house.photo}.JPG" class="img-responsive" alt="properties"></a></td>
+                                                        <td>${house.city}</td>
+                                                        <td class="price"><fmt:formatNumber value="${house.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></td>
+                                                        <td>${house.vendorId.name}</td>
+                                                        <td><p data-placement="top" data-toggle="tooltip" title="Vendor"><a href="VendorsServlet?vendorId=${house.vendorId.vendorId}"><button class="btn btn-primary btn-xs"  ><span class="glyphicon glyphicon-share"></span></button></a></p></td>
+                                                        <td><p data-placement="top" data-toggle="tooltip" title="Property"><a href="AgentServlet?propId=${house.id}"><button class="btn btn-default btn-xs" ><span class="glyphicon glyphicon-home"></span></button></a></p></td>
+                                                    </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- /.panel-body -->
+                    <!-- /.panel-body -->
+                </c:when>    
+                <c:when test="${list == 'all'}">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> All Listings
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="morris-area">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table id="mytable" class="table table-bordred table-striped">
+                                            <thead>
+                                            <th> </th>
+                                            <th>City</th>
+                                            <th>Price</th>
+                                            <th>Vendor</th>
+                                            <th>View Vendor</th>
+                                            <th>View Detail</th>
+                                            </thead>
+                                            <tbody>
+                                                <c:forEach items="${allProps}" var="house">
+                                                    <tr>
+                                                        <td class="image-holder"><a href="PropertiesServlet?singleView=${house.id}"><img style="height:100px; width: 70%;" src="images/properties/large/${house.photo}/${house.photo}.JPG" class="img-responsive" alt="properties"></a></td>
+                                                        <td>${house.city}</td>
+                                                        <td class="price"><fmt:formatNumber value="${house.price}" type="currency" currencySymbol="&euro;" maxFractionDigits="2"/></td>
+                                                        <td>${house.vendorId.name}</td>
+                                                        <td><p data-placement="top" data-toggle="tooltip" title="Vendor"><a href="VendorsServlet?vendorId=${house.vendorId.vendorId}"><button class="btn btn-primary btn-xs"  ><span class="glyphicon glyphicon-share"></span></button></a></p></td>
+                                                        <td><p data-placement="top" data-toggle="tooltip" title="Property"><a href="AgentServlet?propId=${house.id}"><button class="btn btn-default btn-xs" ><span class="glyphicon glyphicon-home"></span></button></a></p></td>
+                                                    </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </c:when>
+            </c:choose>
         </div>
         <!-- /.panel -->
     </div>

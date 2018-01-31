@@ -36,9 +36,14 @@
         <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
         <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
         <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+        <style>
+            body {
+                padding-bottom: 50px;
 
+            }
+
+        </style>
     </head>
-    <body>
     <body>
         <c:set var="props" value="${allProps}"/>
         <c:set var="myProps" value="${agentProps}"/>
@@ -99,10 +104,10 @@
                                 <a href="AgentServlet"><i class="fa fa-bar-chart-o fa-fw"></i> My Property Portfolio</span></a>
                             </li>
                             <li>
-                                <a href="VendorsServlet"><i class="fa fa-table fa-fw"></i> LITRealty Vendors</a>
+                                <a href="VendorsServlet?all"><i class="fa fa-table fa-fw"></i> LITRealty Vendors</a>
                             </li>
                             <li>
-                                <a href=""><i class="fa fa-edit fa-fw"></i> Add Product</a>
+                                <a href="AgentServlet?addProp"><i class="fa fa-edit fa-fw"></i> Add Property</a>
                             </li>
 
                         </ul>
@@ -136,7 +141,7 @@
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <a href="VendorsServlet" <span class="pull-left"> LITRealty Vendors</span>
+                                    <a href="VendorsServlet?all"> <span class="pull-left"> LITRealty Vendors </span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></a>
                                     <div class="clearfix"></div>
                                 </div>
@@ -158,7 +163,8 @@
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <a href="AgentServlet?allProp"> <span class="pull-left"> All Properties </span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></a>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -179,7 +185,7 @@
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <a href="AgentServlet" <span class="pull-left"> My Property Portfolio </span>
+                                    <a href="AgentServlet"> <span class="pull-left"> My Property Portfolio </span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></a>
                                     <div class="clearfix"></div>
                                 </div>

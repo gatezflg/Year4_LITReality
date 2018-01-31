@@ -18,6 +18,7 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.SortedSet;
+import java.util.TreeSet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,20 +63,17 @@ public class LoginServlet extends HttpServlet {
                 address = "/agents/agentProfile.jsp";
                 Agents a = (Agents) sess.getAttribute("agent");
 
+                List<Vendors> vendorList = VendorDB.getAllVendors();
                 List<Properties> props = PropertiesDB.getAllPropertiesOrdered();
 
                 String aName = a.getName();
                 List<Properties> agentProperties = new ArrayList<>();
-                SortedSet vendorList = new java.util.TreeSet();
 
                 for (Properties p : props) {
 
                     if (p.getAgentId().equals(a)) {
                         agentProperties.add(p);
                     }
-                    Vendors v = p.getVendorId();
-                    String vendor = v.getName();
-                    vendorList.add(vendor);
                 }
 
                 title = "LIT Reality Staff Dashboard";
@@ -98,20 +96,17 @@ public class LoginServlet extends HttpServlet {
 
                     address = "/agents/agentProfile.jsp";
                     Agents a = AgentsDB.getAgentByUsername(username);
+                    List<Vendors> vendorList = VendorDB.getAllVendors();
                     List<Properties> props = PropertiesDB.getAllPropertiesOrdered();
 
                     String aName = a.getName();
-                    List<Properties> agentProperties = new ArrayList<Properties>();
-                    SortedSet vendorList = new java.util.TreeSet();
+                    List<Properties> agentProperties = new ArrayList<>();
 
                     for (Properties p : props) {
 
                         if (p.getAgentId().equals(a)) {
                             agentProperties.add(p);
                         }
-                        Vendors v = p.getVendorId();
-                        String vendor = v.getName();
-                        vendorList.add(vendor);
                     }
 
                     title = "LIT Reality Staff Dashboard";

@@ -11,6 +11,7 @@ import classes.entities.Agents;
 import classes.entities.Properties;
 import classes.entities.Vendors;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author gatez1511
  */
-public class VendorsServlet extends HttpServlet {
+public class EditPropertyServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,7 +44,6 @@ public class VendorsServlet extends HttpServlet {
         String address, page, title;
 
         try {
-
             HttpSession sess = request.getSession();
             Agents a = (Agents) sess.getAttribute("agent");
 
@@ -57,100 +57,30 @@ public class VendorsServlet extends HttpServlet {
                 }
             }
 
-            if (request.getParameter("add") != null) {
+            if (request.getParameter("") != null) {
 
-                String addingVendor = request.getParameter("add");
-                page = "Vendors";
-                title = "LITRealty Vendors";
-                address = "/agents/vendorsPage.jsp";
-                request.setAttribute("agent", a);
-                request.setAttribute("vendorList", vendorList);
-                request.setAttribute("allProps", allPropList);
-                request.setAttribute("agentProps", agentProperties);
-                request.setAttribute("addingVendor", addingVendor);
-                request.setAttribute("page", page);
-                request.setAttribute("title", title);
-
-                request.removeAttribute("vendorId");
-
-            } else if (request.getParameter("vendorId") != null) {
-
-                String vID = request.getParameter("vendorId");
-                Vendors selectedVendor = null;
-                for (Vendors v : vendorList) {
-                    String strI = String.valueOf(v.getVendorId());
-                    if (strI == null ? vID == null : strI.equals(vID)) {
-                        selectedVendor = v;
-                    }
-                }
-                List<Properties> vendorProperties = new ArrayList<>();
-                for (Properties p : allPropList) {
-                    if (p.getVendorId().equals(selectedVendor)) {
-                        vendorProperties.add(p);
-                    }
-                }
-
-                page = "Vendors";
-                title = "LITRealty Vendors";
-                address = "/agents/vendorsPage.jsp";
-                request.setAttribute("agent", a);
-                request.setAttribute("vendorList", vendorList);
-                request.setAttribute("selectedVendor", selectedVendor);
-                request.setAttribute("allProps", allPropList);
-                request.setAttribute("agentProps", agentProperties);
-                request.setAttribute("vendorProps", vendorProperties);
-                request.setAttribute("page", page);
-                request.setAttribute("title", title);
-
-                request.removeAttribute("add");
-            } else if (request.getParameter("all") != null) {
-
-                page = "Vendors";
-                title = "LITRealty Vendors";
-                address = "/agents/vendorsPage.jsp";
-                request.setAttribute("agent", a);
-                request.setAttribute("vendorList", vendorList);
-                request.setAttribute("allProps", allPropList);
-                request.setAttribute("agentProps", agentProperties);
-                request.setAttribute("page", page);
-                request.setAttribute("title", title);
-
-                request.removeAttribute("add");
-                request.removeAttribute("vendorId");
-
-            } else if (request.getParameter("contactNumber") != null) {
-
-                Vendors v = new Vendors();
-                String vName = request.getParameter("name");
-                String vNumber = request.getParameter("contactNumber");
-                String vEmail = request.getParameter("email");
-                v.setName(vName);
-                v.setContactNumber(vNumber);
-                v.setEmail(vEmail);
-                VendorDB.insertVendor(v);
-
-                page = "Success!";
-                title = "Vender inserted";
-                address = "/agents/updateSuccess.jsp";
                 
+                
+            } else {
+                
+                
+                
+                
+                
+                page = "Vendors";
+                title = "LITRealty Vendors";
+                address = "/agents/vendorsPage.jsp";
                 request.setAttribute("agent", a);
                 request.setAttribute("vendorList", vendorList);
                 request.setAttribute("allProps", allPropList);
                 request.setAttribute("agentProps", agentProperties);
-                request.setAttribute("newVendor", v);
                 request.setAttribute("page", page);
                 request.setAttribute("title", title);
 
-            } else {
-
-                address = "/agents/agentErrors.jsp";
-                page = "Error!!";
-                title = "An error has occured!";
-                request.setAttribute("page", page);
-                request.setAttribute("title", title);
-                String message = "Error has occured";
-                request.setAttribute("message", message);
+                request.removeAttribute("add");
+                request.removeAttribute("vendorId");
             }
+
         } catch (Exception ex) {
 
             address = "/agents/agentErrors.jsp";

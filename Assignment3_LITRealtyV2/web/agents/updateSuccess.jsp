@@ -1,6 +1,6 @@
 <%-- 
-    Document   : templetePage
-    Created on : 30-Jan-2018, 09:24:16
+    Document   : updateSuccess
+    Created on : 30-Jan-2018, 17:39:41
     Author     : gatez1511
 --%>
 <%@ include file="/agents/adminHeader.jsp" %> 
@@ -14,11 +14,7 @@
             <div class="panel-body">
                 <div id="morris-area">
 
-                    <!-- ADD CONTENT HERE  -->
-                    
-                    
-                    
-                    
+                    <h3>New ${title}</h3>
                 </div>
             </div>
             <!-- /.panel-body -->
