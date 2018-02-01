@@ -6,8 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="product" content="">
+        <meta name="Author" content="Ronan Gately">
         <title>LIT-Realty Agents | ${page}</title>
 
         <!-- Bootstrap Core CSS -->
@@ -107,7 +106,7 @@
                                 <a href="VendorsServlet?all"><i class="fa fa-table fa-fw"></i> LITRealty Vendors</a>
                             </li>
                             <li>
-                                <a href="AgentServlet?addProp"><i class="fa fa-edit fa-fw"></i> Add Property</a>
+                                <a href="EditPropertyServlet"><i class="fa fa-edit fa-fw"></i> Add Property</a>
                             </li>
 
                         </ul>

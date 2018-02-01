@@ -123,16 +123,26 @@
                             </style>
                             <c:choose>
                                 <c:when test="${house.agentId.agentId == agent.agentId}">
-                                    <button type="button" class="btn btn-labeled btn-success">
-                                        <span class="btn-label"><i class="glyphicon glyphicon-inbox"></i></span> Add New Property</button>
+                                    <a href="EditPropertyServlet">
+                                        <button type="button" class="btn btn-labeled btn-success">
+                                            <span class="btn-label"><i class="glyphicon glyphicon-inbox"></i></span> Add New Property
+                                        </button>
+                                    </a>
                                     <br/>  
-                                    <button type="button" class="btn btn-labeled btn-info">
-                                        <span class="btn-label"><i class="glyphicon glyphicon-refresh"></i></span> Update Property</button>
+                                    <a href="EditPropertyServlet?edit=${house.id}">
+                                        <button type="button" class="btn btn-labeled btn-info">
+                                            <span class="btn-label"><i class="glyphicon glyphicon-refresh"></i></span> Update Property
+                                        </button>
+                                    </a>
 
                                 </c:when>
                                 <c:otherwise>
-                                    <div class="col-md-12"> <button type="button" class="btn btn-labeled btn-success">
-                                            <span class="btn-label"><i class="glyphicon glyphicon-inbox"></i></span> Add New Property</button>                                        
+                                    <div class="col-md-12">
+                                        <a href="EditPropertyServlet">
+                                            <button type="button" class="btn btn-labeled btn-success">
+                                                <span class="btn-label"><i class="glyphicon glyphicon-inbox"></i></span> Add New Property
+                                            </button>
+                                        </a>
                                     </div>  
                                 </c:otherwise>
 

@@ -47,7 +47,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Properties.findByPhoto", query = "SELECT p FROM Properties p WHERE p.photo = :photo")
     , @NamedQuery(name = "Properties.findByPrice", query = "SELECT p FROM Properties p WHERE p.price = :price")
     , @NamedQuery(name = "Properties.findLatestProperties", query = "SELECT p FROM Properties p WHERE p.dateAdded > :oneWeekAgo")
-    , @NamedQuery(name = "Properties.findByDateAdded", query = "SELECT p FROM Properties p WHERE p.dateAdded = :dateAdded")})
+    , @NamedQuery(name = "Properties.findByDateAdded", query = "SELECT p FROM Properties p WHERE p.dateAdded = :dateAdded")
+    , @NamedQuery(name = "Properties.findLastListingNum", query = "SELECT p FROM Properties p ORDER BY p.listingNum DESC")
+    , @NamedQuery(name = "Properties.findLastPropId", query = "SELECT p FROM Properties p ORDER BY p.id DESC")})
 public class Properties implements Serializable {
 
     @JoinColumn(name = "vendorId", referencedColumnName = "vendorId")

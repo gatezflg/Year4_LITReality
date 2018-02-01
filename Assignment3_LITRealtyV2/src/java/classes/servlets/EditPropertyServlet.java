@@ -5,16 +5,29 @@
  */
 package classes.servlets;
 
+import classes.db.AgentsDB;
+import classes.db.GarageTypesDB;
 import classes.db.PropertiesDB;
+import classes.db.PropertyStatusDB;
+import classes.db.PropertyTypesDB;
+import classes.db.StylesDB;
 import classes.db.VendorDB;
 import classes.entities.Agents;
+import classes.entities.Garagetypes;
 import classes.entities.Properties;
+import classes.entities.Propertystatus;
+import classes.entities.Propertytypes;
+import classes.entities.Styles;
 import classes.entities.Vendors;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -42,6 +55,7 @@ public class EditPropertyServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String address, page, title;
+        List<String> berRatingsList = Arrays.asList("A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3", "D1", "D2", "E1", "E2", "F", "G", "Exempt");
 
         try {
             HttpSession sess = request.getSession();
@@ -50,6 +64,7 @@ public class EditPropertyServlet extends HttpServlet {
             List<Vendors> vendorList = VendorDB.getAllVendors();
             List<Properties> allPropList = PropertiesDB.getAllPropertiesOrdered();
             List<Properties> agentProperties = new ArrayList<>();
+            List<Agents> allAgents = AgentsDB.getAllAgents();
 
             for (Properties p : allPropList) {
                 if (p.getAgentId().equals(a)) {
@@ -57,28 +72,75 @@ public class EditPropertyServlet extends HttpServlet {
                 }
             }
 
-            if (request.getParameter("") != null) {
+            if (request.getParameter("edit") != null) {
 
-                
-                
+                Properties editProp = PropertiesDB.getPropertyByID(Integer.parseInt(request.getParameter("edit")));
+
+                if (editProp == null) {
+                    address = "/agents/agentErrors.jsp";
+                    page = "Error!!";
+                } else {
+
+                    List<Styles> styles = new ArrayList<>();
+                    List<Propertytypes> propertyType = new ArrayList<>();
+                    List<Garagetypes> garageType = new ArrayList<>();
+                    List<Propertystatus> propertyStatus = new ArrayList<>();
+
+                    styles = StylesDB.getAllStyles();
+                    garageType = GarageTypesDB.getAllGaragetypes();
+                    propertyType = PropertyTypesDB.getAllPropertytypes();
+                    propertyStatus = PropertyStatusDB.getAllPropertystatus();
+
+                    String abso = getServletContext().getRealPath("/images/properties/large/" + editProp.getPhoto() + "/");
+                    File b = new File(abso);
+                    String[] imageList = b.list();
+
+                    page = "Update Property";
+                    title = "Updating: " + editProp.getStreet();
+                    address = "/agents/editPropertyPage.jsp";
+                    request.setAttribute("agent", a);
+                    request.setAttribute("vendorList", vendorList);
+                    request.setAttribute("allProps", allPropList);
+                    request.setAttribute("agentProps", agentProperties);
+                    request.setAttribute("page", page);
+                    request.setAttribute("title", title);
+                    request.setAttribute("editProp", editProp);
+                    request.setAttribute("styles", styles);
+                    request.setAttribute("propertyType", propertyType);
+                    request.setAttribute("garageType", garageType);
+                    request.setAttribute("propertyStatus", propertyStatus);
+                    request.setAttribute("berRatingsList", berRatingsList);
+                    request.setAttribute("allAgents", allAgents);
+                    request.setAttribute("imageList", imageList);
+
+                }
             } else {
-                
-                
-                
-                
-                
-                page = "Vendors";
-                title = "LITRealty Vendors";
-                address = "/agents/vendorsPage.jsp";
+
+                List<Styles> styles = new ArrayList<>();
+                List<Propertytypes> propertyType = new ArrayList<>();
+                List<Garagetypes> garageType = new ArrayList<>();
+                List<Propertystatus> propertyStatus = new ArrayList<>();
+
+                styles = StylesDB.getAllStyles();
+                garageType = GarageTypesDB.getAllGaragetypes();
+                propertyType = PropertyTypesDB.getAllPropertytypes();
+                propertyStatus = PropertyStatusDB.getAllPropertystatus();
+
+                page = "Insert Property";
+                title = "Adding New Property";
+                address = "/agents/addNewProperty.jsp";
                 request.setAttribute("agent", a);
                 request.setAttribute("vendorList", vendorList);
                 request.setAttribute("allProps", allPropList);
                 request.setAttribute("agentProps", agentProperties);
                 request.setAttribute("page", page);
                 request.setAttribute("title", title);
-
-                request.removeAttribute("add");
-                request.removeAttribute("vendorId");
+                request.setAttribute("styles", styles);
+                request.setAttribute("propertyType", propertyType);
+                request.setAttribute("garageType", garageType);
+                request.setAttribute("propertyStatus", propertyStatus);
+                request.setAttribute("berRatingsList", berRatingsList);
+                request.setAttribute("allAgents", allAgents);
             }
 
         } catch (Exception ex) {
